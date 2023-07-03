@@ -50,6 +50,7 @@ const CreateProjectModal = () => {
         />
 
         <label htmlFor="dueDate">Due Date:</label>
+        {/* Possibly add React datePicker */}
         <input
           type="date"
           id="dueDate"
