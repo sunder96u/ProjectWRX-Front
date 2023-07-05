@@ -10,7 +10,7 @@ const CreateTeamModal = () => {
     setSelectedMembers(selectedOptions)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmitTeam = (e) => {
     e.preventDefault()
 
     if (!teamName || !description || selectedMembers.length === 0) {
@@ -35,7 +35,7 @@ const CreateTeamModal = () => {
   return (
     <div className="team-container">
       <h2>Create a New Team</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitTeam}>
         <label htmlFor="teamName">Team Name:</label>
         <input
           type="text"
