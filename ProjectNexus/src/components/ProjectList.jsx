@@ -10,7 +10,7 @@ export default function ProjectList (props) {
                         <ul>
                             <li key={project.name}>
                                 <h3>{project.name}</h3>
-                                <h3>{project.teamLeader}</h3>
+                                <h3>{project.projectLeader}</h3>
                             </li>
                         </ul>
                     </div>

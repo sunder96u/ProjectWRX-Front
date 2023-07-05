@@ -10,7 +10,7 @@ export default function Project (props) {
                         <h3>{project.description}</h3>
                         <h3>Date Created: {project.dateCreated}</h3>
                         <h3>Date Due: {project.dateDue}</h3>
-                        <h3>Lead by: {project.teamLeader}</h3>
+                        <h3>Lead by: {project.projectLeader}</h3>
                     </li>
                 ))}
             </ul>
