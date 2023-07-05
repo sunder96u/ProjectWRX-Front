@@ -16,6 +16,12 @@ const Team = (props) => {
     <div className='team-container'>
         <div className='team-details'>
             <h1>{team.name}</h1>
+            <ul>
+              <li>Team Leader: {team.memberAdmin}</li>
+              <li>Members: {team.member}</li>
+              <li>Description: {team.description}</li>
+              <li>Projects: {team.projects}</li>
+            </ul>
         </div>
 
     {/* <Link to='/TeamList'>Back</Link> */}

@@ -17,6 +17,9 @@ const TeamList = (props) => {
                         <div key={team.name} onClick={()=>showTeam(team)}
                         className='team'>
                         <h3>{team.name}</h3>
+                        <ul>
+                            <li>Team Leader: {team.memberAdmin}</li>
+                        </ul>
                         </div>
                     ))
                 }
