@@ -6,7 +6,7 @@ const CreateTaskModal = () => {
   const [dueDate, setDueDate] = useState('')
   const [completed, setCompleted] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmitTask = (e) => {
     e.preventDefault()
 
     if (!name || !description || !dueDate) {
@@ -33,7 +33,7 @@ const CreateTaskModal = () => {
   return (
     <div className="task-container">
       <h2>Create a New Task</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitTask}>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
