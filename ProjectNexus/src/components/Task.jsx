@@ -1,68 +1,215 @@
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from "react-router-dom"
+import axios from 'axios'
 import "../Task.css"
 
 
 
 export default function Task () {
 
+    //remove once data is dynamic
+    const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
+    const taskId = useParams()
+    const projectId = "64a2d8cfe825a5a0e353b992"
+    const userId =  "649f2fd519a33c576d12bae4"
+
+    const [task, setTask] = useState([])
+    const [project, setProject] = useState([])
+    const [user, setUser] = useState([])
+
+    useEffect(() => {
+        const getTask = async () => {
+            const response = await axios.get(`${BASE_URL}task/${taskId.id}`)
+            setTask(response)
+            const getProjectName = async () => {
+                const response = await axios.get(`${BASE_URL}project/${projectId}`)
+                setProject(response)
+            }
+            const getUserName = async () => {
+                const response = await axios.get(`${BASE_URL}user/${userId}`)
+                setUser(response)
+            }
+            getProjectName()
+            getUserName()
+        }
+        getTask()
+    }, [])
+
+    const complete = (id) => {
+        const update = async () => {
+            await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=true`)
+        }
+        update()
+        navigate("/")
+    }
+
+    const notComplete = (id) => {
+        const update = async () => {
+            await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=false`)
+        }
+        update()
+        navigate("/")
+    }
+
+    const ReviewComplete = (id) => {
+        const update = async () => {
+            await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=reviewed&update=true`)
+        }
+        update()
+        navigate("/")
+    }
+
+    const ReviewRejected = (id) => {
+        const update = async () => {
+            await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=false`)
+        }
+        update()
+        navigate("/")
+    }
+
+    let navigate = useNavigate()
+
+    const back = () => {
+        navigate("/")
+    }
+
+    // replace with if user===projectLead, or teamLead something like that
     const User = false
 
-    if (User) {
+    if (task.length === 0 || project.length === 0 || user.length === 0) {
         return (
+            <h1>Waiting on Task to load</h1>
+        )
+    } else if (!task.data.completed) {
+        if (User) {
+            return (
+                <div className="background">
+                    <div className="col">
+                        <button onClick={() => back()}>Return</button>
+                    </div>
+                    <div className="col">
+                        <div className="row">
+                            <p className="title">Task Name:</p>
+                            <p>{task.data.taskName}</p>
+                        </div>
+                        <div className="row">
+                            <p className="title">Project Name:</p>
+                            <p>{project.data.name}</p>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <p className="title"> Due Date:</p>
+                        <p className="date">{task.data.dateDue}</p>
+                    </div>
+                    <div className="col">
+                        <p className="title">Description:</p>
+                        <p>{task.data.description}</p>
+                    </div>
+                    <div className="col">
+                        <button onClick={() => complete(task.data._id)}>Completed</button>
+                    </div>
+                </div>
+            )
+        } else {
+            return (
             <div className="background">
+                    <div className="col">
+                        <button onClick={() => back()}>Return</button>
+                    </div>
                 <div className="col">
                     <div className="row">
                         <p className="title">Task Name:</p>
-                        <p>(axios task name)</p>
+                        <p>{task.data.taskName}</p>
                     </div>
                     <div className="row">
                         <p className="title">Project Name:</p>
-                        <p>(axios project name here)</p>
+                        <p>{project.data.name}</p>
                     </div>
                 </div>
                 <div className="col">
                     <p className="title"> Due Date:</p>
-                    <p className="date">(axios duedate)</p>
+                    <p className="date">{task.data.dateDue}</p>
+                </div>
+                <div className="col">
+                    <p className="title"> Submited By:</p>
+                    <p>{user.data.firstName} {user.data.lastName}</p>
                 </div>
                 <div className="col">
                     <p className="title">Description:</p>
-                    <p>(description here)</p>
+                    <p>{task.data.description}</p>
                 </div>
                 <div className="col">
-                    <button>Completed</button>
+                    <button onClick={() => complete(task.data._id)}>Completed</button>
                 </div>
             </div>
-        )
-    } else {
-        return (
-        <div className="background">
-            <div className="col">
-                <div className="row">
-                    <p className="title">Task Name:</p>
-                    <p>(axios task name)</p>
+            )
+        }
+    } else if (task.data.completed) {
+        if (User) {
+            return (
+                <div className="background">
+                    <div className="col">
+                        <button onClick={() => back()}>Return</button>
+                    </div>
+                    <div className="col">
+                        <div className="row">
+                            <p className="title">Task Name:</p>
+                            <p>{task.data.taskName}</p>
+                        </div>
+                        <div className="row">
+                            <p className="title">Project Name:</p>
+                            <p>{project.data.name}</p>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <p className="title"> Due Date:</p>
+                        <p className="date">{task.data.dateDue}</p>
+                    </div>
+                    <div className="col">
+                        <p className="title">Description:</p>
+                        <p>{task.data.description}</p>
+                    </div>
+                    <div className="col">
+                        <button onClick={() => notComplete(task.data._id)}>Not Completed</button>
+                    </div>
                 </div>
-                <div className="row">
-                    <p className="title">Project Name:</p>
-                    <p>(axios project name here)</p>
+            )
+        } else {
+            return (
+            <div className="background">
+                    <div className="col">
+                        <button onClick={() => back()}>Return</button>
+                    </div>
+                <div className="col">
+                    <div className="row">
+                        <p className="title">Task Name:</p>
+                        <p>{task.data.taskName}</p>
+                    </div>
+                    <div className="row">
+                        <p className="title">Project Name:</p>
+                        <p>{project.data.name}</p>
+                    </div>
+                </div>
+                <div className="col">
+                    <p className="title"> Due Date:</p>
+                    <p className="date">{task.data.dateDue}</p>
+                </div>
+                <div className="col">
+                    <p className="title"> Submited By:</p>
+                    <p>{user.data.firstName} {user.data.lastName}</p>
+                </div>
+                <div className="col">
+                    <p className="title">Description:</p>
+                    <p>{task.data.description}</p>
+                </div>
+                <div className="col">
+                    <button onClick={() => ReviewComplete(task.data._id)}>Reviewed & Completed</button>
+                    <button onClick={() => ReviewRejected(task.data._id)}>Reviewed & Rejected</button>
                 </div>
             </div>
-            <div className="col">
-                <p className="title"> Due Date:</p>
-                <p className="date">(axios duedate)</p>
-            </div>
-            <div className="col">
-                <p className="title"> Submited By:</p>
-                <p>(axios call of who submited)</p>
-            </div>
-            <div className="col">
-                <p className="title">Description:</p>
-                <p>(description here)</p>
-            </div>
-            <div className="col">
-                <button>Reviewed & Completed</button>
-                <button>Reviewed & Rejected</button>
-            </div>
-        </div>
-        )
+            )   
+
+        }
     }
 
 }
