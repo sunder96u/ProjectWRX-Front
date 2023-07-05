@@ -5,7 +5,7 @@
 export default function Login () {
     return (
         <div>
-            <button>Login W/ Google</button>
+            
             <div className="login-Form" onSubmit={handleSubmit}>
                 <form>
                     <label htmlFor="username">Username: </label>
@@ -16,8 +16,11 @@ export default function Login () {
                     <button type="submit">Submit</button>
                 </form>       
             </div>
-            <p><span className="create">Create Account</span> here</p>
+            <div className="lineBreak"></div>
+            <div>
+                <button>Login W/ Google</button>
+                <p><span className="create">Create Account</span> here</p>
+            </div>
         </div>
-
     )
 }
