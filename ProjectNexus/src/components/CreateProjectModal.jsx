@@ -6,7 +6,7 @@ const CreateProjectModal = () => {
   const [dueDate, setDueDate] = useState('')
   const [teamLeader, setTeamLeader] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmitProject = (e) => {
       e.preventDefault()
   
       if (!name || !description || !dueDate || !teamLeader) {
@@ -33,7 +33,7 @@ const CreateProjectModal = () => {
   return (
     <div className="project-container">
       <h2>Create a New Project</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitProject}>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
