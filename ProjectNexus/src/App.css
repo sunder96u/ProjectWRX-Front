@@ -69,7 +69,6 @@ header {
   margin-right: 80;
   position: sticky;
   top: 50px;
-
 }
 
 .navBar ul li
@@ -179,7 +178,8 @@ a:hover {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
-
+  }
+}
 /* FOR DROPDOWN MENU ON HOVER */
 /* ul {
   display: inline;
