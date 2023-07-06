@@ -109,6 +109,7 @@ header {
   width: 100%;
   padding: 10px 2px;
   box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.5);
+  /* transition-delay: 2s; */
 }
 
 
