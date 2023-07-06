@@ -4,6 +4,7 @@ import CreateTeamModal from './components/CreateTeamModal'
 import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
+import Context from './Context'
 
 function App() {
   return (
