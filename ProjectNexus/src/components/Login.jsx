@@ -1,8 +1,36 @@
-
-
-
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Login () {
+    const initialState = { 
+        userName: '',
+        password: '',
+    }
+
+    const [formState, setFormState] = useState(initialState)
+    const [isActive, setIsActive] = useState(false)
+
+    let navigate = useNavigate()
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log(formState)
+        setFormState(initialState)
+    }
+    const handleChange = e => {
+        setFormState({...formState, [e.target.id]: e.target.value})
+    }
+
+    const logIn = async () => {
+        await axios.get(`http://localhost:3001/api/auth/google`)
+    }
+
+    const create = () => {
+        //send the user to the createpage (will be a nav??)
+        navigate('/createUser')
+    }
+
     return (
         <div>
             
@@ -18,8 +46,8 @@ export default function Login () {
             </div>
             <div className="lineBreak"></div>
             <div>
-                <button>Login W/ Google</button>
-                <p><span className="create">Create Account</span> here</p>
+                <button onClick={() => logIn()}>Login W/ Google</button>
+                <p onClick={create}><span className="create">Create Account</span> here</p>
             </div>
         </div>
     )
