@@ -22,6 +22,7 @@ export default function Login () {
         const user = async () => {
             const myUser = await axios.get(`${BASE_URL}user/username/${formState.userName}`)
             if (myUser.password === formState.password) {
+                setIsActive(false)
                 navigate("/")
             } else {
                 setIsActive(true)
