@@ -1,16 +1,31 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './Nav'
+import Context from '../Context'
 
 
 export default function Header () {
-    return (
-        <div >    
+
+    const { userInfo, setUserInfo } = useContext(Context)
+
+    if (userInfo.username === '') {
+        return (
+            <div >    
             <div className="header">
                 <img src="./src/images/projectwrxlogo.png" />
-                <h1>PROJECTWRX</h1>
-                <Link to="/">Home</Link>
-                <Nav />
             </div>
         </div>
-    )
+        )
+    } else {
+        return (
+            <div >    
+                <div className="header">
+                    <img src="./src/images/projectwrxlogo.png" />
+                    <h1>PROJECTWRX</h1>
+                    <Link to="/">Home</Link>
+                    <Nav />
+                </div>
+            </div>
+        )
+    }
 }
