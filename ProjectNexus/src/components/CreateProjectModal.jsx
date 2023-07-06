@@ -1,34 +1,45 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 const CreateProjectModal = () => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
-  const [dueDate, setDueDate] = useState('')
-  const [teamLeader, setTeamLeader] = useState('')
+  const [dateDue, setDateDue] = useState('')
+  
+  const projectData = {
+    name,
+    description,
+    dateDue,
+  }
+  const saveProjectData = async () => {
+    try {
+      const response = await axios.post(
+        `https://projectwrx-back-production.up.railway.app/api/project/`,
+        projectData
+      )
+      console.log('Project created successfully:', response.data)
+    } catch (error) {
+      console.error('Error creating project:', error)
+    }
+  }
 
   const handleSubmitProject = (e) => {
-      e.preventDefault()
-  
-      if (!name || !description || !dueDate || !teamLeader) {
-        return alert('Please fill in all fields')
-      }
-  
-      const projectData = {
-        name,
-        description,
-        dueDate,
-        teamLeader,
-      }
-  
-      saveProjectData(projectData)
+    e.preventDefault()
 
-      setName('')
-      setDescription('')
-      setDueDate('')
-      setTeamLeader('')
-  
-      alert('Project created successfully!')
+    if (!name || !description || !dateDue) {
+      return alert('Please fill in all fields')
     }
+
+    console.log(projectData)
+
+    saveProjectData(projectData)
+
+    setName('')
+    setDescription('')
+    setDateDue('')
+
+    alert('Project created successfully!')
+  }
 
   return (
     <div className="project-container">
@@ -50,25 +61,15 @@ const CreateProjectModal = () => {
         />
 
         <label htmlFor="dueDate">Due Date:</label>
-        {/* Possibly add React datePicker */}
         <input
           type="date"
           id="dueDate"
-          value={dueDate}
-          onChange={(e) => setDueDate(e.target.value)}
+          value={dateDue}
+          onChange={(e) => setDateDue(e.target.value)}
         />
 
-        <label htmlFor="teamLeader">Team Leader:</label>
-        <select
-          id="teamLeader"
-          value={teamLeader}
-          onChange={(e) => setTeamLeader(e.target.value)}
-        >
-          <option value="">Select a team leader</option>
-          <option value="leader1">Team Leader 1</option>
-          <option value="leader2">Team Leader 2</option>
-          <option value="leader3">Team Leader 3</option>
-        </select>
+        {/* Add the dropdown to choose project leader here */}
+        {/* Replace `projectLeader` state and onChange handler accordingly */}
 
         <button type="submit">Create Project</button>
       </form>
@@ -77,3 +78,4 @@ const CreateProjectModal = () => {
 }
 
 export default CreateProjectModal
+
