@@ -12,7 +12,10 @@ export default function Header () {
         return (
             <div >    
             <div className="header">
-                <img src="./src/images/projectwrxlogo.png" />
+                <div>
+                    {/* <h1>PROJECTWRX</h1> */}
+                    <Link to="/"><img src="./src/images/projectwrxlogo.png" /></Link>
+                </div>
             </div>
         </div>
         )
@@ -20,10 +23,13 @@ export default function Header () {
         return (
             <div >    
                 <div className="header">
-                    <img src="./src/images/projectwrxlogo.png" />
-                    <h1>PROJECTWRX</h1>
-                    <Link to="/">Home</Link>
-                    <Nav />
+                    <div>
+                        <div>
+                            {/* <h1>PROJECTWRX</h1> */}
+                            <Link to="/"><img src="./src/images/projectwrxlogo.png" /></Link>
+                        </div>
+                        <Nav />
+                    </div>
                 </div>
             </div>
         )
