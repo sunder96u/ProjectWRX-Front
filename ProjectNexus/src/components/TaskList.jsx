@@ -52,8 +52,7 @@ export default function TaskList () {
     let navigate = useNavigate()
 
     const taskDetails = (id) => {
-        console.log(`navigate hit id=${id}`)
-        navigate(`task/${id}`)
+        navigate(`/Task/${id}`)
     }
 
     if (completedTask.length === 0 || notCompletedTask.length === 0 || project.length === 0 || user.length === 0) {

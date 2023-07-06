@@ -34,12 +34,12 @@ export default function Main () {
         return (
             <>
             <Routes>
-                <Route path="/" element={<Team />}/>
-                <Route path="/TeamList" element={<TeamList />}/>
-                <Route path="/Project" element={<Project />}/>
+                <Route path="/" element={<TeamList />}/>
+                <Route path="/Team/:teamName" element={<Team />}/>
+                <Route path="/Project/:id" element={<Project />}/>
                 <Route path="/ProjectList" element={<ProjectList />}/>
-                <Route path="/Task" element={<Task />}/>
-                <Route path="/TaskList" element={<TaskList />}/>
+                <Route path="/Task/:id" element={<Task />}/>
+                <Route path="/TaskList/:projId" element={<TaskList />}/>
                 <Route path="CreateProjectModal" element={<CreateProjectModal />}/>
                 <Route path="CreateTaskModal" element={<CreateTaskModal />}/>
                 <Route path="CreateTeamModal" element={<CreateTeamModal />}/> 

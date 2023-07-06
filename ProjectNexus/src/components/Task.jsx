@@ -40,7 +40,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=true`)
         }
         update()
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     const notComplete = (id) => {
@@ -48,7 +48,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=false`)
         }
         update()
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     const ReviewComplete = (id) => {
@@ -56,7 +56,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=reviewed&update=true`)
         }
         update()
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     const ReviewRejected = (id) => {
@@ -64,17 +64,17 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=false`)
         }
         update()
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     let navigate = useNavigate()
 
     const back = () => {
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     // replace with if user===projectLead, or teamLead something like that
-    const User = false
+    const User = true
 
     if (task.length === 0 || project.length === 0 || user.length === 0) {
         return (
