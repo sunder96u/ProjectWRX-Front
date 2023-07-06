@@ -45,7 +45,7 @@ header {
   align-items:flex-start;
   justify-content: space-around;
   margin-left: 0;
-  margin-right: 80%;
+  margin-right: 85%;
 }
 
 /* NAVBAR */
@@ -53,7 +53,12 @@ header {
 {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
+  margin-left: 0;
+  margin-right: 80;
+  position: sticky;
+  top: 50px;
+  
 }
 
 .navBar ul li
@@ -68,13 +73,13 @@ header {
 .navBar ul li a
 {
   color: #000;
+  letter-spacing: 12.8px;
   text-decoration: none;
   padding: 5px 10px;
 }
 
 .navBar ul li a:hover
 {
-  
   background: #ACD732;
   border-radius: 6px;
 }
