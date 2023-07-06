@@ -68,12 +68,14 @@ export default function Team () {
   }
 
 
-  if (team.length === 0) {
+
+  if (!team) {
     return (
         <h1> Waiting on Team to load</h1>
     )
-  } else if (!team.data) {
+  } else if (team) {
     if (Team) {
+
         return (
             <div className='background'>
                 <div className='col'>
@@ -102,7 +104,6 @@ export default function Team () {
                       <p className='team-title' id="team-projects">Team Projects:</p>
                       <p>{team.data.projects}</p>
                     </div>
-
                     <div className='row'>
                       <p className='team-title' id="team-members">Team Members:</p>
                       <p>{team.data.member}</p>
@@ -112,17 +113,6 @@ export default function Team () {
 
             </div>
         )
-    } else {
-      return ( 
-        <div className='background'>
-          <div className='col'>
-            <p>No team found.</p>
-          </div>
-        </div>
-      )
-    }}
+    } }
 
-
-
-  }
 
