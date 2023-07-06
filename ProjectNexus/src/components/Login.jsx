@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Context from "../Context"
 
 
 export default function Login () {
@@ -14,6 +15,7 @@ export default function Login () {
 
     const [formState, setFormState] = useState(initialState)
     const [isActive, setIsActive] = useState(false)
+    const { userInfo, setUserInfo } = useContext(Context)
 
     let navigate = useNavigate()
 
@@ -21,7 +23,8 @@ export default function Login () {
         e.preventDefault()
         const user = async () => {
             const myUser = await axios.get(`${BASE_URL}user/username/${formState.userName}`)
-            if (myUser.password === formState.password) {
+            if (myUser.data[0].password === formState.password) {
+                setUserInfo({firstName:myUser.firstName, lastName:myUser.lastName, userId:myUser._id, username:myUser.username})
                 setIsActive(false)
                 navigate("/")
             } else {
@@ -59,7 +62,7 @@ export default function Login () {
             </div>
             <div className="lineBreak"></div>
             <div>
-                <button onClick={() => logIn()}>Login W/ Google</button>
+                {/* <button onClick={() => logIn()}>Login W/ Google</button> */}
                 <p onClick={create}><span className="create">Create Account</span> here</p>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Login from './Login'
 import CreateAccount from './CreateAccount'
 import CreateProjectModal from './CreateProjectModal'
@@ -11,14 +11,16 @@ import Task from './Task'
 import TaskList from './TaskList'
 import Team from './Team'
 import TeamList from './TeamList'
+import Context from '../Context'
 
 
 
 export default function Main () {
 
     const [user, setUser] = useState("")
+    const { userInfo, setUserInfo } = useContext(Context)
 
-    if (user === "") {
+    if (userInfo.username === '') {
         return (
             <>
             <Routes>
