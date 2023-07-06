@@ -6,9 +6,12 @@ function App() {
 
 
   return (
-    <div>
-      <CreateTeamModal />
-    </div>
+
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
   )
 }
 

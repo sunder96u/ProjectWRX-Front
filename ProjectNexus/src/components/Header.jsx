@@ -5,10 +5,10 @@ export default function Header () {
     return (
         <div >    
             <div className="header">
+                <h1>PROJECTWRX</h1>
                 <Link to="/">Home</Link>
-                <h1 className='title'>ProjectWRX</h1>
+                <Nav />
             </div>
         </div>
-
     )
 }
