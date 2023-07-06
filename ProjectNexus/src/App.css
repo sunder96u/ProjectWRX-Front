@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #E7E7E7;
+}
+
+html {
+  background-color: #E7E7E7;
+}
+
 body {
   font-family: 'Urbanist', sans-serif;
   background-color: #E7E7E7;
@@ -14,7 +24,7 @@ header {
   text-align: center;
   text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   font-family: Urbanist;
-  font-size: 20px;
+  font-size: 10 vmin;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -25,8 +35,9 @@ header {
 
 .teamHeader {
   display: flex;
-  width: 412px;
-  height: 43px;
+  width: 80vmin;
+  word-wrap: break-word;
+  /* height: 43vmin; */
   flex-direction: column;
   justify-content: center;
   color: #000000;
@@ -58,7 +69,7 @@ header {
   margin-right: 80;
   position: sticky;
   top: 50px;
-  
+
 }
 
 .navBar ul li
@@ -107,6 +118,7 @@ li {
 }
 
 main{
+  background-color: #E7E7E7;
 }
 
 
@@ -136,9 +148,9 @@ main{
 
 
 footer {
+  background-color: #E7E7E7;
   display: flex;
-  width: 1197px;
-  height: 41px;
+  height: 2 vmin;
   flex-direction: row;
   justify-content: center;
   text-align: center;
@@ -163,6 +175,10 @@ a:hover {
   color: #ae7ef5
 } */
 
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
 
 /* FOR DROPDOWN MENU ON HOVER */
 /* ul {
