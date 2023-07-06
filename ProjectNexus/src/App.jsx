@@ -8,9 +8,11 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div>
-      <Header />
-      <Main />
-      <Footer />
+      <Context.Provider>
+        <Header />
+        <Main />
+        <Footer />
+      </Context.Provider>
     </div>
   )
 }
