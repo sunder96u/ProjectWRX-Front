@@ -65,7 +65,7 @@ const CreateTeamModal = () => {
         ></textarea>
 
 
-        <button type="submit">Create Team</button>
+        <button type="submit" id="createTeamBtn">Create Team</button>
       </form>
     </div>
   )

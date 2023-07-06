@@ -71,7 +71,7 @@ const CreateProjectModal = () => {
         {/* Add the dropdown to choose project leader here */}
         {/* Replace `projectLeader` state and onChange handler accordingly */}
 
-        <button type="submit">Create Project</button>
+        <button type="submit" id="createProjBtn">Create Project</button>
       </form>
     </div>
   )

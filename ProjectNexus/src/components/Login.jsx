@@ -57,7 +57,7 @@ export default function Login () {
                     <label htmlFor="password">Password: </label>
                     <input type="password" id="password" onChange={handleChange} value={formState.password} />
                     <p className="invalid" style={{display: isActive? "": "none"}}>Password or Username incorrect</p>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="button" id="loginBtn">Submit</button>
                 </form>       
             </div>
             <div className="lineBreak"></div>
