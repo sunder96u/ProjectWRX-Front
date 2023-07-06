@@ -48,6 +48,55 @@ header {
   margin-right: 80%;
 }
 
+/* NAVBAR */
+.navBar ul
+{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navBar ul li
+{
+  list-style: none;
+  padding: 4px;
+  position: relative;
+  transition: 0.5s;
+  display: block;
+}
+
+.navBar ul li a
+{
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.navBar ul li a:hover
+{
+  
+  background: #ACD732;
+  border-radius: 6px;
+}
+
+.navBar ul li ul
+{
+  display: none;
+}
+
+.navBar ul li:hover ul
+{
+  display: block;
+  position: absolute;
+  margin-top: 5px;
+  background: #ACD732;
+  border-radius: 6px;
+  width: 100%;
+  padding: 10px 2px;
+  box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.5);
+}
+
+
 li {
   list-style: none;
 }
@@ -55,12 +104,6 @@ li {
 main{
 }
 
-.login-Form{
-
-}
-
-createUserForm{
-}
 
 .createAccountBtn {
   display: flex;
