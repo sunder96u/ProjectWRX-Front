@@ -2,7 +2,11 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+
 export default function Login () {
+
+    const BASE_URL = "http://localhost:3001/api/"
+
     const initialState = { 
         userName: '',
         password: '',
@@ -13,9 +17,18 @@ export default function Login () {
 
     let navigate = useNavigate()
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(formState)
+        const user = async () => {
+            const myUser = await axios.get(`${BASE_URL}user/username/${formState.userName}`)
+            if (myUser.password === formState.password) {
+                navigate("/")
+            } else {
+                setIsActive(true)
+            }
+            console.log(myUser)
+        }
+        user()
         setFormState(initialState)
     }
     const handleChange = e => {
@@ -27,7 +40,6 @@ export default function Login () {
     }
 
     const create = () => {
-        //send the user to the createpage (will be a nav??)
         navigate('/createUser')
     }
 
