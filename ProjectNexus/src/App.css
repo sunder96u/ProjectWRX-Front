@@ -1,42 +1,181 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  font-family: 'Urbanist', sans-serif;
+  background-color: #E7E7E7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  margin: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+  display: flex;
+  color: rgba(255, 254, 254, 0.07);
+  text-align: center;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 12.8px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.teamHeader {
+  display: flex;
+  width: 412px;
+  height: 43px;
+  flex-direction: column;
+  justify-content: center;
+  color: #000000;
+  text-align: center;
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4px;
 }
 
-.card {
-  padding: 2em;
+.navBar {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: space-around;
+  margin-left: 0;
+  margin-right: 80%;
 }
 
-.read-the-docs {
-  color: #888;
+/* NAVBAR */
+.navBar ul
+{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.navBar ul li
+{
+  list-style: none;
+  padding: 4px;
+  position: relative;
+  transition: 0.5s;
+  display: block;
+}
+
+.navBar ul li a
+{
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.navBar ul li a:hover
+{
+  
+  background: #ACD732;
+  border-radius: 6px;
+}
+
+.navBar ul li ul
+{
+  display: none;
+}
+
+.navBar ul li:hover ul
+{
+  display: block;
+  position: absolute;
+  margin-top: 5px;
+  background: #ACD732;
+  border-radius: 6px;
+  width: 100%;
+  padding: 10px 2px;
+  box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+li {
+  list-style: none;
+}
+
+main{
+}
+
+
+.createAccountBtn {
+  display: flex;
+  width: 303px;
+  height: 25px;
+  padding: 20px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: #ACD732;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+}
+
+.newAccountBtn {
+  display: flex;
+  width: 298px;
+  height: 25px;
+  padding: 20px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: #A2C1BE;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+footer {
+  display: flex;
+  width: 1197px;
+  height: 41px;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  margin-top: 750px;
+  position: absolute;
+}
+
+a:link {
+  color: #80f57e
+}
+
+a:hover {
+  font: rgb(213, 36, 65);
+}
+
+/* a:visited {
+  color: #ae7ef5
+} */
+
+
+/* FOR DROPDOWN MENU ON HOVER */
+/* ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+ul li {display: inline-block;}
+ul li:hover {background: #555;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+ul li ul li {
+  background: #555;
+  display: block;
+}
+ul li ul li a {display:block !important;}
+ul li ul li:hover {background: #666;} */
