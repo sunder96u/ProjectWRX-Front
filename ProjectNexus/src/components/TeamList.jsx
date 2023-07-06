@@ -4,7 +4,7 @@ import axios from 'axios'
 
 
 const TeamList = (props) => {
-    const BASE_URL = "https://projectwrx-back-production.uprailway.app/api/"
+    const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
     const [teams, setTeams] = useState([])
 
@@ -12,6 +12,7 @@ const TeamList = (props) => {
         const getTeams = async () => {
           const response = await axios.get(`${BASE_URL}team`)
           setTeams(response)
+          console.log(response)
         }
         getTeams()
       }, [])
@@ -20,22 +21,24 @@ const TeamList = (props) => {
 
     let navigate = useNavigate()
     const showTeam = (team) => {
-        navigate(`${team.name}`)
+        navigate(`/Team/${team.name}`)
     }
+    console.log(teams)
 
-    if (!teams) {
+    if (!teams.data) {
         return <div>Loading...please wait.</div>
     } else {
         return (
             <div className='team-list'>
+                <h1>Something here</h1>
                 {
-                    teams.map((team)=> (
+                    teams.data.teams.map((team)=> (
                         <div key={team.name} onClick={()=>showTeam(team)}
                         className='team'>
-                        <h3>{team.name}</h3>
-                        <ul>
-                            <li>Team Leader: {team.memberAdmin}</li>
-                        </ul>
+                            <h3>{team.name}</h3>
+                            <ul>
+                                <li>Team Leader: {team.memberAdmin}</li>
+                            </ul>
                         </div>
                     ))
                 }
