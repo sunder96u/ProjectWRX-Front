@@ -1,31 +1,43 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 const CreateTaskModal = () => {
-  const [name, setName] = useState('')
+  const [taskName, setTaskName] = useState('')
   const [description, setDescription] = useState('')
-  const [dueDate, setDueDate] = useState('')
-  const [completed, setCompleted] = useState(false)
+  const [dateDue, setDateDue] = useState('')
+  
+  const taskData = {
+    taskName,
+    description,
+    dateDue,
+  }
+
+  const saveTaskData = async () => {
+    try {
+      const response = await axios.post(
+        `https://projectwrx-back-production.up.railway.app/api/task/`,
+        taskData
+      )
+      console.log('Task created successfully:', response.data)
+    } catch (error) {
+      console.error('Error creating Task:', error)
+    }
+  }
 
   const handleSubmitTask = (e) => {
     e.preventDefault()
 
-    if (!name || !description || !dueDate) {
+    if (!taskName || !description || !dateDue) {
       return alert('Please fill in all fields')
     }
 
-    const taskData = {
-      name,
-      description,
-      dueDate,
-      completed,
-    }
+    console.log(taskData)
 
     saveTaskData(taskData)
 
-    setName('')
+    setTaskName('')
     setDescription('')
-    setDueDate('')
-    setCompleted(false)
+    setDateDue('')
 
     alert('Task created successfully!')
   }
@@ -34,12 +46,12 @@ const CreateTaskModal = () => {
     <div className="task-container">
       <h2>Create a New Task</h2>
       <form onSubmit={handleSubmitTask}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="taskName">Name:</label>
         <input
           type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          id="taskName"
+          value={taskName}
+          onChange={(e) => setTaskName(e.target.value)}
         />
 
         <label htmlFor="description">Description:</label>
@@ -49,24 +61,15 @@ const CreateTaskModal = () => {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <label htmlFor="dueDate">Due Date:</label>
+        <label htmlFor="dateDue">Due Date:</label>
         {/* Possibly add React datePicker */}
         <input
           type="date"
-          id="dueDate"
-          value={dueDate}
-          onChange={(e) => setDueDate(e.target.value)}
+          id="dateDue"
+          value={dateDue}
+          onChange={(e) => setDateDue(e.target.value)}
         />
-
-        <label htmlFor="completed">Completed:</label>
-        <select
-          id="completed"
-          value={completed}
-          onChange={(e) => setCompleted(e.target.value === 'true')}
-        >
-          <option value="false">No</option>
-          <option value="true">Yes</option>
-        </select>
+        
 
         <button type="submit">Create Task</button>
       </form>
