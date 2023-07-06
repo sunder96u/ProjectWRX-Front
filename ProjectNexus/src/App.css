@@ -5,10 +5,22 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin: 0;
 }
 
 header {
   display: flex;
+  color: rgba(255, 254, 254, 0.07);
+  text-align: center;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: Urbanist;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 12.8px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 }
 
 .teamHeader {
@@ -27,12 +39,13 @@ header {
   letter-spacing: 4px;
 }
 
-nav{
+.navBar {
   display: flex;
-  flex-direction: row;
-}
-
-.navBar{
+  flex-direction: column;
+  align-items:flex-start;
+  justify-content: space-around;
+  margin-left: 0;
+  margin-right: 80%;
 }
 
 li {
@@ -43,7 +56,7 @@ main{
 }
 
 .login-Form{
-  
+
 }
 
 createUserForm{
@@ -90,9 +103,9 @@ footer {
   position: absolute;
 }
 
-/* a:link {
+a:link {
   color: #80f57e
-} */
+}
 
 a:hover {
   font: rgb(213, 36, 65);
