@@ -1,5 +1,10 @@
 
+import { Link } from 'react-router-dom'
+import Nav from './Nav'
 
+
+export default function Header () {
+    return (
     <div class="navBar">
       <ul>
         <li>
@@ -13,3 +18,6 @@
         </li>
       </ul>
     </div>
+    )
+}
+
