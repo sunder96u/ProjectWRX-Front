@@ -71,7 +71,7 @@ const CreateTaskModal = () => {
         />
         
 
-        <button type="submit">Create Task</button>
+        <button type="submit" id="createTaskBtn">Create Task</button>
       </form>
     </div>
   )
