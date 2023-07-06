@@ -68,12 +68,11 @@ export default function Team () {
   }
 
 
-  if (team.length === 0) {
+  if (!team) {
     return (
         <h1> Waiting on Team to load</h1>
     )
-  } else if (!team.data) {
-    if (Team) {
+  } else if (team) {
         return (
             <div className='background'>
                 <div className='col'>
@@ -112,17 +111,5 @@ export default function Team () {
 
             </div>
         )
-    } else {
-      return ( 
-        <div className='background'>
-          <div className='col'>
-            <p>No team found.</p>
-          </div>
-        </div>
-      )
-    }}
-
-
-
-  }
+    } }
 
