@@ -8,19 +8,19 @@ We live in a fast-paced world where managing multiple tasks and coordinating tea
 <h4 align="left">Connect with us:</h4>
 Ashlan Filbrun <p align="left">
 <a href="https://www.linkedin.com/in/ashlanfilbrun/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/ashlanfilbrun/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
+<a href="https://github.com/ashfilbrun" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
 </p>
 Christopher Morales <p align="left">
 <a href="https://www.linkedin.com/in/christopher-moralesse/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/christopher-moralesse/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
+<a href="https://github.com/christophermoraleswebdev" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
 </p>
 Ron Rose <p align="left">
 <a href="https://www.linkedin.com/in/rondrickrose/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/rondrickrose/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
+<a href="https://github.com/R-O-N-2" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
 </p>
 Steven Underwood <p align="left">
 <a href="https://www.linkedin.com/in/steven--underwood/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/steven--underwood/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
+<a href="https://github.com/sunder96u" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
 </p>
 
 
@@ -33,3 +33,6 @@ Visit: ProjectWRX (link soon to come)
 <a href="https://trello.com/b/DNvxp8HQ/unit-3" target="_blank" rel="noreferrer"> Trello </a>  
 <br/>
 <a href="https://www.figma.com/file/XUVfb7XA9sADaeI1kEsQV5/ProjectWrx?type=design&node-id=1%3A3&mode=design&t=kWNEHNrgvmWI578H-1" target="_blank" rel="noreferrer"> Figma </a> 
+
+## Login
+<img src="/ProjectNexus/src/images/LoginPage.png" alt="Login Page" />
