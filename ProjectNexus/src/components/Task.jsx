@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
 import axios from 'axios'
-import "../Task.css"
+// import "../Task.css"
 
 
 
@@ -40,7 +40,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=true`)
         }
         update()
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     const notComplete = (id) => {
@@ -48,7 +48,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=false`)
         }
         update()
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     const ReviewComplete = (id) => {
@@ -56,7 +56,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=reviewed&update=true`)
         }
         update()
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     const ReviewRejected = (id) => {
@@ -64,17 +64,17 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=false`)
         }
         update()
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     let navigate = useNavigate()
 
     const back = () => {
-        navigate("/")
+        navigate(`/TaskList/${projectId}`)
     }
 
     // replace with if user===projectLead, or teamLead something like that
-    const User = false
+    const User = true
 
     if (task.length === 0 || project.length === 0 || user.length === 0) {
         return (
@@ -139,7 +139,7 @@ export default function Task () {
                     <p>{task.data.description}</p>
                 </div>
                 <div className="col">
-                    <button onClick={() => complete(task.data._id)}>Completed</button>
+                    <button id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
                 </div>
             </div>
             )
@@ -149,7 +149,7 @@ export default function Task () {
             return (
                 <div className="background">
                     <div className="col">
-                        <button onClick={() => back()}>Return</button>
+                        <button id="backTaskBtn" onClick={() => back()}>Return</button>
                     </div>
                     <div className="col">
                         <div className="row">
@@ -178,7 +178,7 @@ export default function Task () {
             return (
             <div className="background">
                     <div className="col">
-                        <button onClick={() => back()}>Return</button>
+                        <button id="backTaskBtn" onClick={() => back()}>Return</button>
                     </div>
                 <div className="col">
                     <div className="row">
@@ -203,8 +203,8 @@ export default function Task () {
                     <p>{task.data.description}</p>
                 </div>
                 <div className="col">
-                    <button onClick={() => ReviewComplete(task.data._id)}>Reviewed & Completed</button>
-                    <button onClick={() => ReviewRejected(task.data._id)}>Reviewed & Rejected</button>
+                    <button id="reviewAcptBtn" onClick={() => ReviewComplete(task.data._id)}>Reviewed & Completed</button>
+                    <button id="reviewRjctBtn" onClick={() => ReviewRejected(task.data._id)}>Reviewed & Rejected</button>
                 </div>
             </div>
             )   

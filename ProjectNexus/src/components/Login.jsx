@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Context from "../Context"
 
 
 export default function Login () {
 
-    const BASE_URL = "http://localhost:3001/api/"
+    const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
     const initialState = { 
         userName: '',
@@ -14,6 +15,7 @@ export default function Login () {
 
     const [formState, setFormState] = useState(initialState)
     const [isActive, setIsActive] = useState(false)
+    const { userInfo, setUserInfo } = useContext(Context)
 
     let navigate = useNavigate()
 
@@ -21,7 +23,8 @@ export default function Login () {
         e.preventDefault()
         const user = async () => {
             const myUser = await axios.get(`${BASE_URL}user/username/${formState.userName}`)
-            if (myUser.password === formState.password) {
+            if (myUser.data[0].password === formState.password) {
+                setUserInfo({firstName:myUser.firstName, lastName:myUser.lastName, userId:myUser._id, username:myUser.username})
                 setIsActive(false)
                 navigate("/")
             } else {
@@ -54,12 +57,12 @@ export default function Login () {
                     <label htmlFor="password">Password: </label>
                     <input type="password" id="password" onChange={handleChange} value={formState.password} />
                     <p className="invalid" style={{display: isActive? "": "none"}}>Password or Username incorrect</p>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className="button" id="loginBtn">Submit</button>
                 </form>       
             </div>
             <div className="lineBreak"></div>
             <div>
-                <button onClick={() => logIn()}>Login W/ Google</button>
+                {/* <button onClick={() => logIn()}>Login W/ Google</button> */}
                 <p onClick={create}><span className="create">Create Account</span> here</p>
             </div>
         </div>

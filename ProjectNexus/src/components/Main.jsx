@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Login from './Login'
 import CreateAccount from './CreateAccount'
 import CreateProjectModal from './CreateProjectModal'
@@ -11,14 +11,16 @@ import Task from './Task'
 import TaskList from './TaskList'
 import Team from './Team'
 import TeamList from './TeamList'
+import Context from '../Context'
 
 
 
 export default function Main () {
 
     const [user, setUser] = useState("")
+    const { userInfo, setUserInfo } = useContext(Context)
 
-    if (user === "") {
+    if (userInfo.username === '') {
         return (
             <>
             <Routes>
@@ -32,12 +34,12 @@ export default function Main () {
         return (
             <>
             <Routes>
-                <Route path="/" element={<Team />}/>
-                <Route path="/TeamList" element={<TeamList />}/>
-                <Route path="/Project" element={<Project />}/>
+                <Route path="/" element={<TeamList />}/>
+                <Route path="/Team/:teamName" element={<Team />}/>
+                <Route path="/Project/:id" element={<Project />}/>
                 <Route path="/ProjectList" element={<ProjectList />}/>
-                <Route path="/Task" element={<Task />}/>
-                <Route path="/TaskList" element={<TaskList />}/>
+                <Route path="/Task/:id" element={<Task />}/>
+                <Route path="/TaskList/:projId" element={<TaskList />}/>
                 <Route path="CreateProjectModal" element={<CreateProjectModal />}/>
                 <Route path="CreateTaskModal" element={<CreateTaskModal />}/>
                 <Route path="CreateTeamModal" element={<CreateTeamModal />}/> 

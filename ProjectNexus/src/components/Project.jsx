@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
+import axios from 'axios'
 
 
 const Project = (props) => {
+    const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
     
     const [projectId, setProjectId] = useState('')
     const [project, setProject] = useState(null)
@@ -12,27 +14,30 @@ const Project = (props) => {
 
     useEffect(() => {
         let selectedProject = async() => {
-            const response = await axios.get(`${BASE_URL}/project/${projectId}`)
-            setTask(response)
-            console.log(response)
+            const response = await axios.get(`${BASE_URL}/project/${id}`)
+            setProject(response)
+
         }
         setProject(), setProjectId()
+        selectedProject()
     }, [props.project, id])
 
+    let navigate = useNavigate()
+
+    const TaskList = (id) => {
+        navigate(`/TaskList/${id}`)
+    }
 
     return project ? (
-        <div className="project">
+        <div className="project" onClick={() => TaskList(project.data._id)}>
             <h1>Project</h1>
             <ul>
-                {props.project.map((project => (
-                    <li key={project.name}>
-                        <h3>Project {project.name}</h3>
-                        <h3>{project.description}</h3>
-                        <h3>Date Created: {project.dateCreated}</h3>
-                        <h3>Date Due: {project.dateDue}</h3>
-                        <h3>Lead by: {project.projectLeader}</h3>
-                    </li>
-                )))}
+                <li key={project.data.name}>
+                    <h3>Project {project.data.name}</h3>
+                    <h3>Description: {project.data.description}</h3>
+                    <h3>Date Created: {project.data.createdAt}</h3>
+                    <h3>Date Due: {project.data.dateDue}</h3>
+                </li>
             </ul>
         </div>
     ) :null;
