@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import Nav from './Nav'
+import TeamList from './TeamList'
+import ProjectList from './ProjectList'
 
 
 export default function Header () {
@@ -7,12 +8,8 @@ export default function Header () {
     <div class="navBar">
       <ul>
         <li>
-          <a href="#">MENU</a>
-          
-          
-          
-          
-          <ul>
+          <a className="menu" href="#">MENU</a>
+          <ul className='navBabies'>
             <li><Link to="/TeamList">Teams</Link></li>
             <li><Link to="/ProjectList">Projects</Link></li>
             <li><Link to="/TaskList">Tasks</Link></li>
@@ -21,6 +18,6 @@ export default function Header () {
         </li>
       </ul>
     </div>
-    )
+  )
 }
 

@@ -50,7 +50,8 @@ export default function Login () {
     return (
         <div>
             <div className="loginForm" onSubmit={handleSubmit}>
-                <form>
+                <h2>Welcome, please login to continue:</h2>
+                <form className="loglogformform">
                     <label htmlFor="username">USERNAME: </label>
                     <input type="text" placeholder="Enter username here" id="userName" onChange={handleChange} value={formState.userName}/>
                     <label htmlFor="password">PASSWORD: </label>

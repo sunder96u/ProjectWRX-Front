@@ -29,16 +29,18 @@ const Project = (props) => {
     }
 
     return project ? (
-        <div className="project" onClick={() => TaskList(project.data._id)}>
+        <div className="indiv-Project" onClick={() => TaskList(project.data._id)}>
             <h1>Project</h1>
-            <ul>
-                <li key={project.data.name}>
-                    <h3>Project {project.data.name}</h3>
-                    <h3>Description: {project.data.description}</h3>
-                    <h3>Date Created: {project.data.createdAt}</h3>
-                    <h3>Date Due: {project.data.dateDue}</h3>
-                </li>
-            </ul>
+            <div className="project-info">
+                <ul>
+                    <li key={project.data.name}>
+                        <h3>Project {project.data.name}</h3>
+                        <h3>Description: {project.data.description}</h3>
+                        <h3>Date Created: {project.data.createdAt}</h3>
+                        <h3>Date Due: {project.data.dateDue}</h3>
+                    </li>
+                </ul>
+            </div>
         </div>
     ) :null;
 }

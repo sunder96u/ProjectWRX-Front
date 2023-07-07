@@ -11,13 +11,11 @@ export default function Header () {
     if (userInfo.username === '') {
         return (
             <div >    
-            <div className="header">
-                <div>
+                <div className="header">
                     {/* <h1>PROJECTWRX</h1> */}
                     <Link to="/"><img src="./src/images/projectwrxlogo.png" /></Link>
                 </div>
             </div>
-        </div>
         )
     } else {
         return (

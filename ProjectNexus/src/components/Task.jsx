@@ -83,13 +83,13 @@ export default function Task () {
     } else if (!task.data.completed) {
         if (User) {
             return (
-                <div className="background">
+                <div className="container" id="completedTask">
                     <div className="col">
-                        <button onClick={() => back()}>Return</button>
+                        <button id="backBtn" onClick={() => back()}>Return</button>
                     </div>
                     <div className="col">
                         <div className="row">
-                            <p className="title">Task Name:</p>
+                            <p className="title"></p>
                             <p>{task.data.taskName}</p>
                         </div>
                         <div className="row">
@@ -106,15 +106,15 @@ export default function Task () {
                         <p>{task.data.description}</p>
                     </div>
                     <div className="col">
-                        <button onClick={() => complete(task.data._id)}>Completed</button>
+                        <button id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
                     </div>
                 </div>
             )
         } else {
             return (
-            <div className="background">
+            <div className="container" id="notCompletedTask">
                     <div className="col">
-                        <button onClick={() => back()}>Return</button>
+                        <button id="backBtn" onClick={() => back()}>Return</button>
                     </div>
                 <div className="col">
                     <div className="row">
@@ -147,9 +147,9 @@ export default function Task () {
     } else if (task.data.completed) {
         if (User) {
             return (
-                <div className="background">
+                <div className="container" id="task">
                     <div className="col">
-                        <button id="backTaskBtn" onClick={() => back()}>Return</button>
+                        <button id="backBtn" onClick={() => back()}>Return</button>
                     </div>
                     <div className="col">
                         <div className="row">
@@ -170,15 +170,15 @@ export default function Task () {
                         <p>{task.data.description}</p>
                     </div>
                     <div className="col">
-                        <button onClick={() => notComplete(task.data._id)}>Not Completed</button>
+                        <button id="completeTaskBtn" onClick={() => notComplete(task.data._id)}>Not Completed</button>
                     </div>
                 </div>
             )
         } else {
             return (
-            <div className="background">
+            <div className="container" id="task">
                     <div className="col">
-                        <button id="backTaskBtn" onClick={() => back()}>Return</button>
+                        <button id="backBtn" onClick={() => back()}>Return</button>
                     </div>
                 <div className="col">
                     <div className="row">
@@ -195,7 +195,7 @@ export default function Task () {
                     <p className="date">{task.data.dateDue}</p>
                 </div>
                 <div className="col">
-                    <p className="title"> Submited By:</p>
+                    <p className="title"> Submitted By:</p>
                     <p>{user.data.firstName} {user.data.lastName}</p>
                 </div>
                 <div className="col">

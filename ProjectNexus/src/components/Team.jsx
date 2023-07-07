@@ -55,41 +55,39 @@ export default function Team () {
     if (Team) {
 
         return (
+          <div className='teamsList'>
             <div className='background'>
-                <div className='col'>
-                    <button onClick={() => back()}>Return</button>
-                    <button onClick={()=> updateTeam()}>Update Team</button>
-                    <button onClick={()=> deleteTeam()}>Delete Team</button>
-                </div>
-
-                <div className='col'>
+                <div className='col' id="teamInfo">
                     <div className='row'>
-                        <p className='team-title' id="team-name">Team Name:</p>
-                        <p>{team.data[0].name}</p>
+                        <h3 className='team-Title'>Team {team.data[0].name}</h3>
                     </div>
                     {/* create map if there will be more than 1 member Admin */}
                     <div className='row'>
-                      <p className='team-title' id="team-leader">Team Leader:</p>
+                      <p className='team-Title'>Team Leader:</p>
                       {/* <p>{team.data[0].memberAdmin}</p> */}
                     </div>
 
                     <div className='row'>
-                      <p classname='team-title' id="team-description">Team Description:</p>
+                      <p classname='team-Title'>Team Description:</p>
                       <p>{team.data[0].description}</p>
                     </div>
                     {/* create map since there will be more than 1 project/member */}
                     <div className='row' onClick={() => project(projectId)}>
-                      <p className='team-title' id="team-projects">Team Projects:</p>
-                      {/* <p>{team.data.projects}</p> */}
+                      <p className='team-Title'>Team Projects:</p>
+                      <p>{team.data.projects}</p>
                     </div>
                     <div className='row'>
-                      <p className='team-title' id="team-members">Team Members:</p>
+                      <p className='team-Title'>Team Members:</p>
                       {/* <p>{team.data.member}</p> */}
                     </div>
-
                 </div>
-
+                <div className='col' id='teamInfo'>
+                    <button id="cancelBtn" onClick={() => back()}>Return</button>
+                    <button id="cancelBtn" onClick={()=> updateTeam()}>Update Team</button>
+                    <button id="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
+                </div>
             </div>
+          </div>
         )
     } }
   }

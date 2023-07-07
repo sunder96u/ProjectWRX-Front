@@ -8,6 +8,15 @@ html {
   background-color: #E7E7E7;
 }
 
+img{
+  max-width: 70vmax;
+  /* border-bottom: black solid 3px; */
+  border-radius: 12px 12px;
+  padding-top: 25px;
+  width: 100%;
+  /* box-shadow: 40px 10px 40px 40px #A2C1BE; */
+}
+
 body {
   font-family: 'Urbanist', sans-serif;
   background-color: #E7E7E7;
@@ -31,6 +40,7 @@ header {
   letter-spacing: 12.8px;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
+  border-bottom: green solid 40px;
 }
 
 .teamHeader {
@@ -55,112 +65,345 @@ header {
   flex-direction: column;
   align-items:flex-start;
   justify-content: space-around;
-  margin-left: 0;
-  margin-right: 85%;
+  /* margin-left: 0;
+  margin-right: 85%; */
+  transition: 0s 180s;
+  background-color: #ACD732;
 }
 
+.navBabies{
+  transition: 0s 180s;
+  /* background-color: #ACD732; */
+}
+
+/* .menu {
+  background-color: #E7E7E7;
+} */
 /* NAVBAR */
-.navBar ul
-{
+.navBar ul {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
-  margin-left: 0;
-  margin-right: 80;
+  /* margin-left: 0;
+  margin-right: 80; */
   position: sticky;
   top: 50px;
+  /* background-color: #ACD732; */
 }
 
-.navBar ul li
-{
+.navBar ul li {
   list-style: none;
   padding: 4px;
   position: relative;
-  transition: 0.5s;
+  transition: 17.5s;
   display: block;
+  /* background-color: #ACD732; */
 }
 
-.navBar ul li a
-{
+.navBar ul li a {
   color: #000;
   letter-spacing: 12.8px;
   text-decoration: none;
   padding: 5px 10px;
+  background-color: #ACD732;
+  border-radius: 7px;
 }
 
-.navBar ul li a:hover
-{
-  background: #ACD732;
+.navBar ul li a:hover {
+  background-color: #A2C1BE;
   border-radius: 6px;
+  /* transition: 0s 180s; */
 }
 
-.navBar ul li ul
-{
+.navBar ul li ul {
   display: none;
+  /* background-color: #ACD732; */
 }
 
-.navBar ul li:hover ul
-{
+.navBar ul li:hover ul {
   display: block;
   position: absolute;
-  margin-top: 5px;
+  /* margin-top: 5px; */
   background: #ACD732;
   border-radius: 6px;
   width: 100%;
-  padding: 10px 2px;
+  /* padding: 10px 2px; */
   box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.5);
-  /* transition-delay: 2s; */
+  transition-delay: 180s;
 }
 
+input {
+  font-size: 16px;
+}
+
+#userName {
+  background-color: #E7E7E7 ;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+}
+#password {
+  background-color: #E7E7E7;
+  margin-bottom: 5px;
+  font-family: 'Raleway', sans-serif;
+}
+
+label {
+  background-color: #A2C1BE;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  margin-left: 20px;
+  letter-spacing: .75vmin;
+}
 
 li {
   list-style: none;
 }
 
-main{
+form {
+  background-color: #A2C1BE;
+  display: flex;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  flex-wrap: wrap;
+  word-wrap: normal;
+}
+
+.loglogformform {
+  display: flex;
+  min-width: 50px;
+  padding: 20px;
+  /* min-height: 500px; */
+}
+
+h1 {
+  padding: 10px;
+  letter-spacing: .75vw;
+  font-family: 'Raleway', sans-serif;
+  border-top: black 2px solid;
+  /* font-style: italic; */
+}
+
+main {
   background-color: #E7E7E7;
 }
 
-
-.createAccountBtn {
-  display: flex;
-  width: 303px;
-  height: 25px;
-  padding: 20px 32px;
-  justify-content: center;
+p.invalid {
+  background-color: #A2C1BE;
+  color: Red;
+  font-weight: bold;
+  margin: auto;
   align-items: center;
-  gap: 9px;
-  background: #ACD732;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+  padding: 5px;
+
 }
 
-.newAccountBtn {
+#submit {
+  color: black;
   display: flex;
   width: 298px;
   height: 25px;
-  padding: 20px 32px;
+  padding: 18px;
+  margin-top: 10px;
   justify-content: center;
   align-items: center;
   gap: 9px;
-  background: #A2C1BE;
+  background: rgb(172 215 50 / 0.75);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+}
+
+#resetBtn {
+  display: flex;
+  width: 298px;
+  height: 20px;
+  padding: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: white;
+  color: black;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-
-footer {
-  background-color: #E7E7E7;
+#cancelBtn {
   display: flex;
-  height: 2 vmin;
+  width: 298px;
+  height: 20px;
+  padding: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: black;
+  color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#createBtn {
+  display: flex;
+  width: 298px;
+  height: 20px;
+  margin: 0 auto;
+  margin-bottom: 14px;
+  padding: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: black;
+  color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#backBtn{
+  display: flex;
+  width: 298px;
+  height: 20px;
+  padding: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: black;
+  color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#deleteBtn {
+  display: flex;
+  width: 298px;
+  height: 20px;
+  padding: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: black;
+  color: red;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.container {
+  display: flex;
+}
+
+#task {
+  display: flex;
+}
+
+.teamsList {
+  display: flex;
+  flex-wrap: wrap;
+  word-wrap: normal;
+  margin: 50px 150px 50px 150px;
+  width: auto;
+  border: 2px purple solid;
+  height: auto;
+  /* padding: 15px; */
+}
+
+.team {
+  word-wrap: normal;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto; 
+  justify-content: center;
+  align-items: center;
+  border: 2.5px solid rgb(172 215 50 / 0.95);
+  /* padding: 30px; */
+  margin: 15px 150px 15px 150px;
+  border-radius: 5px 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+}
+
+#teamName {
+  display: flex;
+  align-items: center;
+  background-color: rgb(172 215 50 / 0.75);
+  justify-content: center;
+}
+
+.leader {
+  font-size: 2vmin;
+  background-color: rgb(172 215 50 / 0.75);
+  padding-bottom: 15px;
+}
+
+h2 {
+  font-size: 35px;
+  padding-top: 30px;
+  padding-bottom: 5px;
+  letter-spacing: .55vw;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  border-top: black 2px solid;
+}
+
+h3 {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  letter-spacing: .55vw;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  border-top: black 2px solid;
+}
+
+h4 {
+  font-size: 26px;
+  padding-top: 45px;
+  padding-bottom: 15px;
+  letter-spacing: .55vw;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* #teamsList {
+  display: flex;
+  border: 2px solid black;
+} */
+/* 
+.background {
+  display: flex;
+  border: 2px solid black;
+} */
+
+
+#teamInfo {
+  display: flex; 
+  flex-wrap: wrap;
+  word-wrap: normal;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid blue;
+  margin: 50px 20px 50px 20px;
+  padding: 20px;
+}
+
+#team-title
+
+
+#reviewAcptBtn{}
+
+#reviewRjctBtn{}
+
+.indiv-Project {
+}
+
+.project-info {
+}
+
+
+p.footer {
+  background-color: #E7E7E7;
+  padding: 50px;
+  display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
+  word-wrap: normal;
   text-align: center;
-  font-size: 12px;
-  font-family: Inter;
+  font-size: 10px;
+  font-family: 'monserrat', sans-serif;
   font-style: normal;
   font-weight: 200;
-  line-height: normal;
-  margin-top: 750px;
-  position: absolute;
+  /* line-height: normal; */
+  /* margin-top: 90vmax; */
+  /* position: absolute; */
 }
 
 a:link {
@@ -181,7 +424,9 @@ a:hover {
     width: 100%;
   }
 }
+
 /* FOR DROPDOWN MENU ON HOVER */
+
 /* ul {
   display: inline;
   margin: 0;
