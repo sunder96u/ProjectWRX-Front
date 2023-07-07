@@ -49,21 +49,22 @@ export default function Login () {
 
     return (
         <div>
-            
-            <div className="login-Form" onSubmit={handleSubmit}>
-                <form>
-                    <label htmlFor="username">Username: </label>
-                    <input type="text" placeholder="UserName" id="userName" onChange={handleChange} value={formState.userName}/>
-                    <label htmlFor="password">Password: </label>
-                    <input type="password" id="password" onChange={handleChange} value={formState.password} />
-                    <p className="invalid" style={{display: isActive? "": "none"}}>Password or Username incorrect</p>
-                    <button type="submit" className="button" id="loginBtn">Submit</button>
+            <div className="loginForm" onSubmit={handleSubmit}>
+                <h2>Welcome, please login to continue:</h2>
+                <form className="loglogformform">
+                    <label htmlFor="username">USERNAME: </label>
+                    <input type="text" placeholder="Enter username here" id="userName" onChange={handleChange} value={formState.userName}/>
+                    <label htmlFor="password">PASSWORD: </label>
+                    <input type="password" placeholder="Enter password here" id="password" onChange={handleChange} value={formState.password} />
+                    <p className="invalid" style={{display: isActive? "": "none"}}>Username or password is incorrect. Please try again!</p>
+                    <button type="submit" id="submit">LOG IN</button>
+                    <button type="reset" id="resetBtn">forgot password ?</button>
                 </form>       
             </div>
             <div className="lineBreak"></div>
             <div>
                 {/* <button onClick={() => logIn()}>Login W/ Google</button> */}
-                <p onClick={create}><span className="create">Create Account</span> here</p>
+                <button id="createBtn" onClick={create}>New Here? &nbsp;Create An Account</button>
             </div>
         </div>
     )

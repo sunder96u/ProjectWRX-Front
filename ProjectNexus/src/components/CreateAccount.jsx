@@ -55,20 +55,20 @@ export default function CreateAccount () {
         <div>
         <div className="createUserForm" onSubmit={handleSubmit}>
             <form>
-                <label htmlFor="firstName">Firstname: </label>
+                <label htmlFor="firstName">ENTER FIRST NAME: </label>
                 <input type="text" placeholder="First name" id="firstName" onChange={handleChange} value={formState.firstName}></input>
-                <label htmlFor="lastName"> Lastname: </label>
+                <label htmlFor="lastName">ENTER LAST NAME: </label>
                 <input type="text" placeholder="Last name" id="lastName" onChange={handleChange} value={formState.lastName}></input>
-                <label htmlFor="userName">Username: </label>
+                <label htmlFor="userName">CREATE USERNAME: </label>
                 <input type="text" placeholder="Username" id="userName" onChange={handleChange} value={formState.userName}></input>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">ENTER EMAIL ADDRESS:</label>
                 <input type="email" placeholder="email" id="email" onChange={handleChange} value={formState.email}></input>
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password">CREATE PASSWORD:</label>
                 <input type="password" id="password" onChange={handleChange} value={formState.password}></input>
-                <label htmlFor="passwordValid">Re-enter password</label>
+                <label htmlFor="passwordValid">CONFIRM PASSWORD:</label>
                 <input type="password" id="passwordValid" onChange={handleChange} value={formState.passwordValid}></input>
-                <button type="submit" className="button" id="createAcctBtn">Submit</button>
-                <button type="cancel" className="button" id="cancelBtn" onClick={cancel}>Cancel</button>
+                <button type="submit" id="submit">Create New Account</button>
+                <button type="cancel" id="cancelBtn" onClick={cancel}>Cancel</button>
             </form>       
         </div>
     </div>

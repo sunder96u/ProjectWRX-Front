@@ -62,17 +62,16 @@ export default function TaskList () {
     } else {
 
     return (
-        <div className="background task">
+        <div className="taskList">
             <div className="row">
                 <div className="col">
-                    <p className="title">Not Completed:</p>
+                    <h3 className="title">Not Completed:</h3>
                 </div>
                 {notCompletedTask.data.map(task => 
-                    <div className="col">
+                    <div className="container" id="taskListNCContainer">
                         <div className="row" key={task._id} onClick={() => taskDetails(task._id)}>
                             <div className="col">
-                                <p className="titleSmall">Task Name:</p>
-                                <p>{task.taskName}</p>
+                                <h4 className="titleSmall">Task: {task.taskName}</h4>
                             </div>
                             <div className="col">
                                 <p className="titleSmall">Project Name:</p>
@@ -97,7 +96,7 @@ export default function TaskList () {
             </div>
             <div className="row">
                 <div className="col">
-                    <p className="title">Completed:</p>
+                    <h3 className="title">Completed:</h3>
                 </div>
                 {completedTask.data.map(task => 
                     <div className="row" key={task._id} onClick={() => taskDetails(task._id)}>

@@ -30,14 +30,14 @@ const TeamList = (props) => {
     } else {
         return (
             <div className='team-list'>
-                <h1>Something here</h1>
+                <h2>TEAMS</h2>
                 {
                     teams.data.teams.map((team)=> (
                         <div key={team.name} onClick={()=>showTeam(team)}
                         className='team'>
-                            <h3>{team.name}</h3>
+                            <h4 id="teamName">{team.name}</h4>
                             <ul>
-                                <li>Team Leader: {team.memberAdmin}</li>
+                                <li className="leader" id="teamLeader">Team Leader: {team.memberAdmin}</li>
                             </ul>
                         </div>
                     ))
