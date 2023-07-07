@@ -6,21 +6,21 @@ We live in a fast-paced world where managing multiple tasks and coordinating tea
 
 ## Team Members
 <h4 align="left">Connect with us:</h4>
-Ashlan Filbrun - <p align="left">
+Ashlan Filbrun <p align="left">
 <a href="https://www.linkedin.com/in/ashlanfilbrun/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/ashlanfilbrun/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://www.oomnitza.com/wp-content/uploads/2022/06/github-logo-300x300.png" alt="GitHub" height="40" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6H3k5o1hr4luxqjzGWsJEKODInCZKG2Q_Fg&usqp=CAU" alt="GitHub" height="40" width="40" /></a>
 </p>
-Christopher Morales - <p align="left">
+Christopher Morales <p align="left">
 <a href="https://www.linkedin.com/in/christopher-moralesse/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/christopher-moralesse/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://www.oomnitza.com/wp-content/uploads/2022/06/github-logo-300x300.png" alt="GitHub" height="40" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6H3k5o1hr4luxqjzGWsJEKODInCZKG2Q_Fg&usqp=CAU" alt="GitHub" height="40" width="40" /></a>
 </p>
-Ron Rose - <p align="left">
+Ron Rose <p align="left">
 <a href="https://www.linkedin.com/in/rondrickrose/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/rondrickrose/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://www.oomnitza.com/wp-content/uploads/2022/06/github-logo-300x300.png" alt="GitHub" height="40" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6H3k5o1hr4luxqjzGWsJEKODInCZKG2Q_Fg&usqp=CAU" alt="GitHub" height="40" width="40" /></a>
 </p>
-Steven Underwood - <p align="left">
+Steven Underwood <p align="left">
 <a href="https://www.linkedin.com/in/steven--underwood/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/steven--underwood/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://www.oomnitza.com/wp-content/uploads/2022/06/github-logo-300x300.png" alt="GitHub" height="40" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6H3k5o1hr4luxqjzGWsJEKODInCZKG2Q_Fg&usqp=CAU" alt="GitHub" height="40" width="40" /></a>
 </p>
 
 
