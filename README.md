@@ -8,19 +8,19 @@ We live in a fast-paced world where managing multiple tasks and coordinating tea
 <h4 align="left">Connect with us:</h4>
 Ashlan Filbrun - <p align="left">
 <a href="https://www.linkedin.com/in/ashlanfilbrun/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/ashlanfilbrun/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="GitHub" height="40" width="40" /></a>
 </p>
 Christopher Morales - <p align="left">
 <a href="https://www.linkedin.com/in/christopher-moralesse/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/christopher-moralesse/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="GitHub" height="40" width="40" /></a>
 </p>
 Ron Rose - <p align="left">
 <a href="https://www.linkedin.com/in/rondrickrose/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/rondrickrose/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="GitHub" height="40" width="40" /></a>
 </p>
 Steven Underwood - <p align="left">
 <a href="https://www.linkedin.com/in/steven--underwood/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/steven--underwood/" height="30" width="40" /></a>
-<a href="" target="blank"><img align="center" src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="GitHub" height="40" width="40" /></a>
+<a href="" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" alt="GitHub" height="40" width="40" /></a>
 </p>
 
 
