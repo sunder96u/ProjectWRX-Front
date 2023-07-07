@@ -35,4 +35,4 @@ Visit: ProjectWRX (link soon to come)
 <a href="https://www.figma.com/file/XUVfb7XA9sADaeI1kEsQV5/ProjectWrx?type=design&node-id=1%3A3&mode=design&t=kWNEHNrgvmWI578H-1" target="_blank" rel="noreferrer"> Figma </a> 
 
 ## Login
-<img src="/ProjectNexus/public/LoginPage.png" alt="Login Page" />
+<img src="./ProjectNexus/public/LoginPage.png" alt="Login Page" />
