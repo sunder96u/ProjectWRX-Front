@@ -12,6 +12,7 @@ import TaskList from './TaskList'
 import Team from './Team'
 import TeamList from './TeamList'
 import Context from '../Context'
+// import Profile from './Profile'
 
 
 
@@ -39,6 +40,7 @@ export default function Main () {
                 <Route path="/Team/:teamName" element={<Team />}/>
                 <Route path="/Project/:id" element={<Project />}/>
                 <Route path="/ProjectList" element={<ProjectList />}/>
+                {/* <Route path="/Profile/:id" element={<Profile />} /> */}
                 <Route path="/Task/:id" element={<Task />}/>
                 <Route path="/TaskList/:projId" element={<TaskList />}/>
                 <Route path="CreateProjectModal" element={<CreateProjectModal />}/>
