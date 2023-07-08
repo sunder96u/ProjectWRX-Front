@@ -1,36 +1,39 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
 import axios from 'axios'
-// import "../Task.css"
+import Context from "../Context"
+
 
 
 
 export default function Task () {
 
-    //remove once data is dynamic
     const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
     const taskId = useParams()
-    const projectId = "64a2d8cfe825a5a0e353b992"
-    const userId =  "649f2fd519a33c576d12bae4"
-
     const [task, setTask] = useState([])
     const [project, setProject] = useState([])
     const [user, setUser] = useState([])
+    const { userInfo, setUserInfo } = useContext(Context)
+    let navigate = useNavigate()
+    const isAdmin = false
 
     useEffect(() => {
         const getTask = async () => {
             const response = await axios.get(`${BASE_URL}task/${taskId.id}`)
             setTask(response)
             const getProjectName = async () => {
-                const response = await axios.get(`${BASE_URL}project/${projectId}`)
-                setProject(response)
+                const projectName = await axios.get(`${BASE_URL}project/${response.data.projectId}`)
+                setProject(projectName)
             }
             const getUserName = async () => {
-                const response = await axios.get(`${BASE_URL}user/${userId}`)
-                setUser(response)
+                const userName = await axios.get(`${BASE_URL}user/${response.data.userId}`)
+                setUser(userName)
             }
             getProjectName()
             getUserName()
+            if (project.data.teamLeader === userInfo.userId) {
+                isAdmin = true
+            }
         }
         getTask()
     }, [])
@@ -40,7 +43,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=true`)
         }
         update()
-        navigate(`/TaskList/${projectId}`)
+        navigate(`/TaskList/${project.data._id}`)
     }
 
     const notComplete = (id) => {
@@ -48,7 +51,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=false`)
         }
         update()
-        navigate(`/TaskList/${projectId}`)
+        navigate(`/TaskList/${project.data._id}`)
     }
 
     const ReviewComplete = (id) => {
@@ -56,7 +59,7 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=reviewed&update=true`)
         }
         update()
-        navigate(`/TaskList/${projectId}`)
+        navigate(`/TaskList/${project.data._id}`)
     }
 
     const ReviewRejected = (id) => {
@@ -64,24 +67,22 @@ export default function Task () {
             await axios.put(`${BASE_URL}task?taskId=${id}&whatToUpdate=completed&update=false`)
         }
         update()
-        navigate(`/TaskList/${projectId}`)
+        navigate(`/TaskList/${project.data._id}`)
     }
-
-    let navigate = useNavigate()
 
     const back = () => {
-        navigate(`/TaskList/${projectId}`)
+        navigate(`/TaskList/${project.data._id}`)
     }
 
-    // replace with if user===projectLead, or teamLead something like that
-    const User = true
+    console.log(project)
+    console.log(userInfo)
 
     if (task.length === 0 || project.length === 0 || user.length === 0) {
         return (
             <h1>Waiting on Task to load</h1>
         )
     } else if (!task.data.completed) {
-        if (User) {
+        if (!isAdmin) {
             return (
                 <div className="container" id="completedTask">
                     <div className="col">
@@ -144,8 +145,8 @@ export default function Task () {
             </div>
             )
         }
-    } else if (task.data.completed) {
-        if (User) {
+    } else {
+        if (!isAdmin) {
             return (
                 <div className="container" id="task">
                     <div className="col">

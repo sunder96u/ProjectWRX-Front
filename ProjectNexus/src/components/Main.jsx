@@ -19,6 +19,7 @@ export default function Main () {
 
     const [user, setUser] = useState("")
     const { userInfo, setUserInfo } = useContext(Context)
+    console.log(userInfo)
 
     if (userInfo.username === '') {
         return (

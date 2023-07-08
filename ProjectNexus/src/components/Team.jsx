@@ -40,9 +40,10 @@ export default function Team () {
     navigate("/")
   }
 
-  const project = (id) => {
+  const showProject = (id) => {
     navigate(`/Project/${id}`)
   }
+
 
   const showProject = (project) => {
     navigate(`/Project/${project}`)
@@ -52,8 +53,6 @@ export default function Team () {
 //   navigate(`/Team/${memberAdmin}`)
 // }
 
-
-
   if (!team.data) {
     return (
         <h1> Waiting on Team to load</h1>
@@ -62,74 +61,65 @@ export default function Team () {
     if (Team) {
         console.log(team.data)
         return (
-            <div className='background'>
-                <div className='col'>
-                    <button id="backBtn" onClick={() => back()}>Return</button>
-                    <button id="updateBtn" onClick={()=> updateTeam()}>Update Team</button>
-                    <button id="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
-                </div>
-                  {
-                    team.data.map((data)=> (
-                    <div key={data.memberAdmin} 
-                    // onClick={()=>showMemberAdmin(memberAdmin)} 
-                      className='memberAdmin'>
-                            {/* mapping out teams */}
-                            <div className='col'>
-                              <div className='row'>
-                                <p className='team-title' id="team-name">Team {data.name}</p>
-                              </div>
-                  
-                              <div className='row'>
-                                <p className='team-title' id="team-leader">Team Leader:</p>
-                                <p>{data.memberAdmin}</p>
-                              </div>
-
-                              <div className='row'>
-                                <p classname='team-title' id="team-description">Team Description:</p>
-                                <p>{data.description}</p>
-                              </div>
-                            </div>
-                            {/* mapping out project names */}
-                            <div className='row'>
-                              <p className='team-title' id="team-projects">Team Projects:</p>
-
-                              {
-                                team.data.map((project)=> (
-                                  <div key={project.name} onClick={()=>showProject (project)} classname='team-projects'>
-                                    <p>{project.name}</p>
-                                    </div>
-                                ))
-                                }
-                            </div>
-
-                            {/* mapping out team members */}
-                            <div className='row'>
-                              <p className='team-title' id="team-members">Team Members:</p>
-
-                                {
-                                  team.data.map((member)=> (
-                                    <div key={member.name} onClick={()=>showMember(member)} className='team-members'>
-                                      <p>{member.name}</p>
-                                    </div>
-                                  ))
-                                }
-                            </div>
-
-                          </div>
-                        ))
-                      }
-
-
-                    
-
-                    
-                    {/* create map since there will be more than 1 project/member */}
-                   
-                   
-
-                </div>
-
+          <div className='background'>
+          <div className='col'>
+              <button id="backBtn" onClick={() => back()}>Return</button>
+              <button id="updateBtn" onClick={()=> updateTeam()}>Update Team</button>
+              <button id="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
+          </div>
+            {
+              team.data.map((data)=> (
+              <div key={data.name} 
+              // onClick={()=>showMemberAdmin(memberAdmin)} 
+                className='memberAdmin'>
+                      {/* mapping out teams */}
+                      <div className='col'>
+                        <div className='row'>
+                          <p className='team-title' id="team-name">Team {data.name}</p>
+                        </div>
             
+                        <div className='row'>
+                          <p className='team-title' id="team-leader">Team Leader:</p>
+                          <p>{data.memberAdmin[0].username}</p>
+                        </div>
+
+                        <div className='row'>
+                          <p classname='team-title' id="team-description">Team Description:</p>
+                          <p>{data.description}</p>
+                        </div>
+                      </div>
+                      {/* mapping out project names */}
+                      <div className='row'>
+                        <p className='team-title' id="team-projects">Team Projects:</p>
+
+                        {
+                          team.data[0].projects.map((project)=> (
+                            <div key={project.name} onClick={() => showProject(project._id)} classname='team-projects'>
+                              <p>{project.name}</p>
+                              </div>
+                          ))
+                          }
+                      </div>
+
+                      {/* mapping out team members */}
+                      <div className='row'>
+                        <p className='team-title' id="team-members">Team Members:</p>
+
+                          {
+                            team.data[0].member.map((member)=> (
+                              <div key={member.username} onClick={() => showMember(member)} className='team-members'>
+                                <p>{member.username}</p>
+                              </div>
+                            ))
+                          }
+                      </div>
+
+                    </div>
+                  ))
+                }
+              {/* create map since there will be more than 1 project/member */}
+          </div>
         )
     } }
   }
+

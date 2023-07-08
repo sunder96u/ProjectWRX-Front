@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 
-const TeamList = (props) => {
+const TeamList = () => {
     const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
     const [teams, setTeams] = useState([])
@@ -37,7 +37,7 @@ const TeamList = (props) => {
                         className='team'>
                             <h4 id="teamName">{team.name}</h4>
                             <ul>
-                                <li className="leader" id="teamLeader">Team Leader: {team.memberAdmin}</li>
+                                <li className="leader" id="teamLeader">Team Leader: {team.memberAdmin[0].username}</li>
                             </ul>
                         </div>
                     ))
