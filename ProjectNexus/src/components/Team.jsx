@@ -28,7 +28,6 @@ export default function Team () {
      navigate("/")
   }
  
- 
   const deleteTeam = async (id) => {
     await axios.delete(`${BASE_URL}team/${id}`)
      navigate("/")
@@ -45,7 +44,14 @@ export default function Team () {
     navigate(`/Project/${id}`)
   }
 
-console.log(team)
+
+  const showProject = (project) => {
+    navigate(`/Project/${project}`)
+}
+
+// const showMemberAdmin = (memberAdmin) => {
+//   navigate(`/Team/${memberAdmin}`)
+// }
 
   if (!team.data) {
     return (
@@ -53,7 +59,7 @@ console.log(team)
     )
   } else {
     if (Team) {
-
+        console.log(team.data)
         return (
           <div className='background'>
           <div className='col'>
@@ -116,5 +122,4 @@ console.log(team)
         )
     } }
   }
-
 
