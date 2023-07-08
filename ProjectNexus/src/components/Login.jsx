@@ -21,20 +21,27 @@ export default function Login () {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log(formState)
         const user = async () => {
             const myUser = await axios.get(`${BASE_URL}user/username/${formState.userName}`)
+            console.log(myUser)
+            if (myUser.data.length === 0) {
+                setIsActive(true)
+            }
+            console.log(myUser)
             if (myUser.data[0].password === formState.password) {
-                setUserInfo({firstName:myUser.firstName, lastName:myUser.lastName, userId:myUser._id, username:myUser.username})
+                setUserInfo({...userInfo, firstName: myUser.data[0].firstName, lastName: myUser.data[0].lastName, userId: myUser.data[0]._id, username: myUser.data[0].username})
                 setIsActive(false)
+                console.log(userInfo)
                 navigate("/")
             } else {
                 setIsActive(true)
             }
-            console.log(myUser)
         }
         user()
         setFormState(initialState)
     }
+
     const handleChange = e => {
         setFormState({...formState, [e.target.id]: e.target.value})
     }

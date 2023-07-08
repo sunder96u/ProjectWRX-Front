@@ -17,14 +17,11 @@ export default function CreateAccount () {
     }
 
     const [formState, setFormState] = useState(initialState)
-
-    
+   
     let navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(formState)
-        //send people back to home
         const newUser = {
             firstName: formState.firstName,
             lastName: formState.lastName,

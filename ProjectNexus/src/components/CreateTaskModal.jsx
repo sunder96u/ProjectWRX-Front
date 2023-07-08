@@ -1,16 +1,36 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Select from 'react-select'
 
-const CreateTaskModal = () => {
+const CreateTaskModal = (props) => {
+  const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
+
   const [taskName, setTaskName] = useState('')
   const [description, setDescription] = useState('')
   const [dateDue, setDateDue] = useState('')
+  const object = []
+
+  console.log(props)
   
   const taskData = {
     taskName,
     description,
     dateDue,
   }
+
+  useEffect(() => {
+    const getTeamMembers = async () => {
+      for (let i = 0; i < props.project.data.projectMembers.length; i++) {
+        let userId = props.project.data.projectMembers[i]._id
+        let userName = props.project.data.projectMembers.username
+        const newObj = []
+        newObj['value'] = userId
+        newObj['label'] = userName
+        object[i] = newObj
+      }
+    }
+    getTeamMembers()
+  }, [])
 
   const saveTaskData = async () => {
     try {
@@ -68,6 +88,14 @@ const CreateTaskModal = () => {
           id="dateDue"
           value={dateDue}
           onChange={(e) => setDateDue(e.target.value)}
+        />
+
+        <label htmlFor="selectUser">Team Member:</label>
+        <Select 
+          id="projectMembers"
+          defaultValue={`Select Team Members`}
+          isMulti
+          options={object}
         />
         
 

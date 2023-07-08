@@ -6,8 +6,6 @@ import axios from 'axios'
 export default function TaskList () {
 
     const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
-    const userId = "649f2fd519a33c576d12bae3"
-    const projectId = "64a2d8cfe825a5a0e353b992"
 
     const [completedTask, setCompletedTask] = useState([])
     const [notCompletedTask, setNotCompletedTask] = useState([])
@@ -16,31 +14,31 @@ export default function TaskList () {
 
     useEffect(() => {
         const getCompletedTask = async () => {
-            //temp just grabbing all tasks change to by user or by project once db is correct
-            const response = await axios.get(`${BASE_URL}/task`)
+            const response = await axios.get(`${BASE_URL}/task/completed/completed`)
             setCompletedTask(response)
+            console.log(`${response} completedTasks`)
             const getProjectName = async () => {
-                const response = await axios.get(`${BASE_URL}project/${projectId}`)
-                setProject(response)
+                const projectName = await axios.get(`${BASE_URL}project/${response.data[0].projectId}`)
+                setProject(projectName)
             }
             const getUserName = async () => {
-                const response = await axios.get(`${BASE_URL}user/${userId}`)
-                setUser(response)
+                const userName = await axios.get(`${BASE_URL}user/${response.data[0].userId}`)
+                setUser(userName)
             }
             getProjectName()
             getUserName()
         }
         const getNotCompletedTask = async () => {
-            //temp just grabbing all tasks change to by user or by project once db is correct
-            const response = await axios.get(`${BASE_URL}/task`)
+            const response = await axios.get(`${BASE_URL}/task/notCompleted/notCompleted`)
             setNotCompletedTask(response)
+            console.log(`${response} notCompletedTasks`)
             const getProjectName = async () => {
-                const response = await axios.get(`${BASE_URL}project/${projectId}`)
-                setProject(response)
+                const projectName = await axios.get(`${BASE_URL}project/${response.data[0].projectId}`)
+                setProject(projectName)
             }
             const getUserName = async () => {
-                const response = await axios.get(`${BASE_URL}user/${userId}`)
-                setUser(response)
+                const userName = await axios.get(`${BASE_URL}user/${response.data[0].userId}`)
+                setUser(userName)
             }
             getProjectName()
             getUserName()

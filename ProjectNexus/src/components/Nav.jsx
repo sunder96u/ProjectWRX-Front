@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom'
-import TeamList from './TeamList'
-import ProjectList from './ProjectList'
-
 
 export default function Header () {
     return (
-    <div class="navBar">
+    <div className="navBar">
       <ul>
         <li>
           <a className="menu" href="#">MENU</a>
@@ -18,6 +15,6 @@ export default function Header () {
         </li>
       </ul>
     </div>
-  )
+    )
 }
 

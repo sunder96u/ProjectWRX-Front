@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useParams, useNavigate } from "react-router-dom"
 import axios from 'axios'
+import CreateTask from './CreateTaskModal'
 
 
 const Project = (props) => {
@@ -28,8 +29,11 @@ const Project = (props) => {
         navigate(`/TaskList/${id}`)
     }
 
+    console.log(project)
+
     return project ? (
-        <div className="indiv-Project" onClick={() => TaskList(project.data._id)}>
+        <>
+                <div className="indiv-Project" onClick={() => TaskList(project.data._id)}>
             <h1>Project</h1>
             <div className="project-info">
                 <ul>
@@ -42,6 +46,11 @@ const Project = (props) => {
                 </ul>
             </div>
         </div>
+        <button>Create Task</button>
+        <button>Add TeamMember</button>
+        <CreateTask project={project}/>
+        </>
+
     ) :null;
 }
 
