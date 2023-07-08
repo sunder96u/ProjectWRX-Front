@@ -13,7 +13,7 @@ export default function Header () {
             <div >    
                 <div className="header">
                     {/* <h1>PROJECTWRX</h1> */}
-                    <Link to="/"><img src="./src/images/projectwrxlogo.png" /></Link>
+                    <Link to="/"><img className="logo" src="./src/images/projectwrxlogo.png" alt="Project Wrx"/></Link>
                 </div>
             </div>
         )
@@ -24,7 +24,7 @@ export default function Header () {
                     <div>
                         <div>
                             {/* <h1>PROJECTWRX</h1> */}
-                            <Link to="/"><img src="./src/images/projectwrxlogo.png" /></Link>
+                            <Link to="/"><img className="logo" src="./src/images/projectwrxlogo.png" alt="Project Wrx"/></Link>
                         </div>
                         <Nav />
                     </div>
