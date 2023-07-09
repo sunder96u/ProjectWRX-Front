@@ -82,8 +82,8 @@ const ProfilePage = () => {
                   <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={user.email}/>
                   <label htmlFor="password">UPDATE PASSWORD:</label>
                   <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={user.password}/>
-                  <label htmlFor="passwordValid">CONFIRM NEW PASSWORD:</label>
-                  <input type="password" id="passwordValid" onChange={handleChange} value={formState.passwordValid}></input>
+                  {/* <label htmlFor="passwordValid">CONFIRM NEW PASSWORD:</label>
+                  <input type="password" id="passwordValid" onChange={handleChange} value={formState.passwordValid}></input> */}
                   <button className="submit" id="updateBtn" type="submit">Update Profile</button>
             </form>
       </div>
