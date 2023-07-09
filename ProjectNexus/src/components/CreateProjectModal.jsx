@@ -95,7 +95,7 @@ const CreateProjectModal = ({open, onClose}) => {
         <p onClick={onClose} className="closeBtn">X</p>
         <h2 className="createProjectHeader">Create a New Project</h2>
         <form onSubmit={handleSubmitProject}>
-          <label htmlFor="name">PROJECT NAME:</label>
+          <label htmlFor="name">Project Name:</label>
           <input
             type="text"
             id="name"
@@ -103,21 +103,21 @@ const CreateProjectModal = ({open, onClose}) => {
             placeholder="Enter projects name here..."
             onChange={(e) => setName(e.target.value)}
           />
-          <label htmlFor="description">DESCRIPTION:</label>
+          <label htmlFor="description">Description:</label>
           <textarea
           placeholder='Enter a short description of your project here...'
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          <label htmlFor="dueDate">DUE DATE:</label>
+          <label htmlFor="dueDate">Due Date:</label>
           <input
             type="date"
             id="dueDate"
             value={dateDue}
             onChange={(e) => setDateDue(e.target.value)}
           />
-          <label htmlFor="projectMembers">PROJECT MEMBERS:</label>
+          <label htmlFor="projectMembers">Project Team Members:</label>
           <Select className='selectBar'
             id="projectMembers"
             defaultValue={`Select Team Members`}

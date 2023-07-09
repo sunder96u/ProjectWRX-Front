@@ -40,24 +40,27 @@ const Project = (props) => {
 
     return project ? (
       <>
-         <div className="indiv-Project" onClick={() => TaskList(project.data._id)}>
-            <div className="project-info">
-                <ul>
-                    <li key={project.data.name}>
-                        <h2>Project: {project.data.name}</h2>
-                        <p>Description: {project.data.description}</p>
-                        <p>Date Created: {project.data.createdAt}</p>
-                        <p>Date Due: {project.data.dateDue}</p>
-                        <p>Team Members: {project.data.projectMembers}</p>
-                        <p>Project Tasks: {project.data.taskId}</p> 
-                        {/* probs not taskId or projectMembers tho */}
+         <div onClick={() => TaskList(project.data._id)}>
+            <div className="projectInfo">
+                <ul id="projectUL">
+                    <li className="indivProject" key={project.data.name}>
+                        <h2 className="project">Project: {project.data.name}</h2>
+                        <p>Description: </p>
+                        <p>{project.data.description}</p>
+                        <p>Date Created:</p>
+                        <p>{project.data.createdAt}</p>
+                        <p>Date Due:</p>
+                        <p>{project.data.dateDue}</p>
+                        <p>Team Members: </p>
+                        <p>{project.data.projectMembers}</p>
+                        <p>Project Tasks: </p>
+                        <p>{project.data.taskId}</p> 
+                        <button className="createBtn" id="createProj" onClick={() => setOpenModal(true)}>Create Task</button>
+                        <button className="deleteBtn" onClick={() => deleteProject(project.data._id)}>Delete</button>
                     </li>
                 </ul>
             </div>
         </div>
-        <button className="createBtn" onClick={() => setOpenModal(true)}>Create Task</button>
-        <button className="deleteBtn" onClick={() => deleteProject(project.data._id)}>Delete</button>
-        {/* <button className="submit" id="addTeamMember">Add Team Member</button> */}
         <CreateTask project={project} open={openModal} onClose={() => setOpenModal(false)}/>
       </>
     ) :null;

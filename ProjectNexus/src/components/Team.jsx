@@ -113,7 +113,7 @@ console.log(team)
               {/* create map since there will be more than 1 project/member */}
             <CreateProject open={openModal} onClose={() => setOpenModal(false)} />
             <div className='teamButtons'>
-                <button className="createBtn" onClick={()=> updateTeam(team.data[0]._id))}>Update Team</button>
+                <button className="createBtn" onClick={()=> updateTeam(team.data[0]._id)}>Update Team</button>
                 <button className="deleteBtn" onClick={()=> deleteTeam(team.data[0]._id)}>Delete Team</button>
                 <button className="submit" id="addBtn" onClick={()=> setOpenModal(true)}> Add Project</button>
                 <button className="backBtn" onClick={() => back()}>Return</button>
