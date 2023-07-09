@@ -74,6 +74,7 @@ const CreateProjectModal = ({open, onClose}) => {
     onClose()
 
     alert('Project created successfully!')
+  }
     
  if (!open) return null
  console.log(open)
@@ -117,6 +118,6 @@ const CreateProjectModal = ({open, onClose}) => {
     </div>
   )
 }
-}
+
 export default CreateProjectModal
 
