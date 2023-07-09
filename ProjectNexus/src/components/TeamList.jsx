@@ -37,14 +37,16 @@ const TeamList = () => {
                         teams.data.teams.map((team)=> (
                             <div key={team.name} onClick={()=>showTeam(team)}
                             className='team'>
-                                <h4 id="teamName">{team.name}</h4>
-                                <ul>
-                                    <li className="leader" id="teamLeader">Team Leader: {team.memberAdmin[0].username}</li>
-                                </ul>
+                                <div className='allTeamInfo'>
+                                    <h4 id="teamName">{team.name}</h4>
+                                    <ul>
+                                        <li className="leader" id="teamLeader">Team Leader: {team.memberAdmin[0].username}</li>
+                                    </ul>
+                                </div>
                             </div>
                         ))
                     }
-                    <button onClick={() => setOpenModal(true)}>Create Team</button>
+                    <button className="createBtn" onClick={() => setOpenModal(true)}>Create Team</button>
                 </div>
                 <CreateTeam open={openModal} onClose={() => setOpenModal(false)}/>
             </>
