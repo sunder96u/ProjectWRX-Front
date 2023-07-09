@@ -75,20 +75,20 @@ const CreateTaskModal = ({open, onClose}, props) => {
         <p onClick={onClose} className="closeBtn">X</p>
         <h2>Create a New Task</h2>
         <form onSubmit={handleSubmitTask}>
-          <label htmlFor="taskName">NAME:</label>
+          <label htmlFor="taskName">Name:</label>
           <input
             type="text"
             id="taskName"
             value={taskName}
             onChange={(e) => setTaskName(e.target.value)}
            />
-          <label htmlFor="description">DESCRIPTION:</label>
+          <label htmlFor="description">Description:</label>
           <textarea
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
            />
-          <label htmlFor="dateDue">DUE DATE:</label>
+          <label htmlFor="dateDue">Due Date:</label>
           {/* Possibly add React datePicker */}
           <input
             type="date"
@@ -96,7 +96,7 @@ const CreateTaskModal = ({open, onClose}, props) => {
             value={dateDue}
             onChange={(e) => setDateDue(e.target.value)}
             />
-          <label htmlFor="selectUser">TEAM MEMBER:</label>
+          <label htmlFor="selectUser">Team Member:</label>
           <Select 
             id="projectMembers"
             defaultValue={`Select Team Members`}
