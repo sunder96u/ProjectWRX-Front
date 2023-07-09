@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Select from 'react-select'
 
-const CreateTaskModal = ({open, onClose, project}) => {
+const CreateTaskModal = ({open, onClose}, props) => {
   const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
   const [taskName, setTaskName] = useState('')
@@ -16,11 +17,14 @@ const CreateTaskModal = ({open, onClose, project}) => {
     dateDue,
   }
 
+  let navigate = useNavigate()
+
   useEffect(() => {
+    console.log(props)
     const getTeamMembers = async () => {
-      for (let i = 0; i < project.data.projectMembers.length; i++) {
-        let userId = project.data.projectMembers[i]._id
-        let userName = project.data.projectMembers.username
+      for (let i = 0; i < props.project.data.projectMembers.length; i++) {
+        let userId = props.project.data.projectMembers[i]._id
+        let userName = props.project.data.projectMembers.username
         const newObj = []
         newObj['value'] = userId
         newObj['label'] = userName
@@ -36,6 +40,7 @@ const CreateTaskModal = ({open, onClose, project}) => {
         `https://projectwrx-back-production.up.railway.app/api/task/`,
         taskData
       )
+      navigate("/")
       console.log('Task created successfully:', response.data)
     } catch (error) {
       console.error('Error creating Task:', error)
@@ -107,3 +112,4 @@ const CreateTaskModal = ({open, onClose, project}) => {
 }
 
 export default CreateTaskModal
+

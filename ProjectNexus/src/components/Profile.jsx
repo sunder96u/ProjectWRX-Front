@@ -83,7 +83,7 @@ const ProfilePage = () => {
                   <label htmlFor="password">UPDATE PASSWORD:</label>
                   <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={user.password}/>
                   {/* <label htmlFor="passwordValid">CONFIRM NEW PASSWORD:</label>
-                  <input type="password" id="passwordValid" onChange={handleChange} value={formState.passwordValid}></input> */}
+                  <input type="password" id="passwordValid" onChange={(e) => setPasswordValid(e.target.value)} value={formState.passwordValid}></input> */}
                   <button className="submit" id="updateBtn" type="submit">Update Profile</button>
             </form>
       </div>
@@ -92,3 +92,4 @@ const ProfilePage = () => {
 }
 
 export default ProfilePage
+
