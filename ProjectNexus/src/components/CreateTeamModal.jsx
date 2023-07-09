@@ -17,7 +17,7 @@ const CreateTeamModal = ({open, onClose}) => {
   const [memberAdmin, setMemberAdmin] = useState('')
   // const [members, setMembers] = useState([])
   const { userInfo, setUserInfo } = useContext(Context)
-  console.log(open)
+
 
   const teamData = {
     name,
@@ -87,3 +87,4 @@ const CreateTeamModal = ({open, onClose}) => {
 }
 
 export default CreateTeamModal
+

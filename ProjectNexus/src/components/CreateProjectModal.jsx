@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Context from '../Context'
 import Select from 'react-select'
@@ -11,15 +11,21 @@ const CreateProjectModal = ({open, onClose}) => {
   const [description, setDescription] = useState('')
   const [dateDue, setDateDue] = useState('')
   const [projectLeader, setProjectLeader] = useState('')
+  const [taskId, setTaskId] = useState('')
+  const [projectMembers, setProjectMembers] = useState([])
   const { userInfo, setUserInfo } = useContext(Context)
   const [teamMembers, setTeamMembers] = useState({})
   const teamName = useParams()
+
+  let navigate = useNavigate()
 
   const projectData = {
     name,
     description,
     dateDue,
-    projectLeader
+    projectLeader,
+    taskId,
+    projectMembers,
   }
 
   // work on dynamic all pieces there, maybe a filter until the axios call is made?
@@ -42,16 +48,20 @@ const CreateProjectModal = ({open, onClose}) => {
         //object[i] = newObj
       }
     }
+    setProjectLeader(userInfo.userId)
     getTeamMembers()
   }, [])
 
+  console.log(userInfo.userId)
 
-  const saveProjectData = async () => {
+  const saveProjectData = async (projectData) => {
+    console.log(projectData)
     try {
       const response = await axios.post(
         `${BASE_URL}project/`,
         projectData
       )
+      navigate("/")
       console.log('Project created successfully:', response.data)
     } catch (error) {
       console.error('Error creating project:', error)
@@ -64,24 +74,24 @@ const CreateProjectModal = ({open, onClose}) => {
     if (!name || !description || !dateDue || !teamMembers) {
       return alert('Please fill in all fields')
     }
-    setProjectLeader(userInfo.userId)
-    
+    setTaskId(null)
     saveProjectData(projectData)
 
     setName('')
     setDescription('')
     setDateDue('')
+    setProjectLeader('')
+    setProjectMembers('')
     onClose()
 
-    alert('Project created successfully!')
+    //alert('Project created successfully!')
   }
     
  if (!open) return null
- console.log(open)
   
   return (
     <div className="overlay" onClick={onClose}>
-      <div onClick={(e) => {e.stopPropagation()}} className="project-container">
+      <div onClick={(e) => {e.stopPropagation()}} className="project-container modal-container">
         <p onClick={onClose} className="closeBtn">X</p>
         <h2>Create a New Project</h2>
         <form onSubmit={handleSubmitProject}>
@@ -121,4 +131,5 @@ const CreateProjectModal = ({open, onClose}) => {
 
 
 export default CreateProjectModal
+
 

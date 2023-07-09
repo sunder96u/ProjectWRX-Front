@@ -13,6 +13,7 @@ const Project = (props) => {
     const [openModal, setOpenModal] = useState(false)
 
     let { id } = useParams()
+    console.log(props)
 
     useEffect(() => {
         let selectedProject = async() => {
@@ -27,6 +28,12 @@ const Project = (props) => {
 
     const TaskList = (id) => {
         navigate(`/TaskList/${id}`)
+    }
+
+    const deleteProject = async (id) => {
+        console.log(id)
+        await axios.delete(`${BASE_URL}project/${id}`)
+        navigate('/')
     }
 
     console.log(project)
@@ -49,6 +56,7 @@ const Project = (props) => {
             </div>
         </div>
         <button className="createBtn" onClick={() => setOpenModal(true)}>Create Task</button>
+        <button className="deleteBtn" onClick={() => deleteProject(project.data._id)}>Delete</button>
         {/* <button className="submit" id="addTeamMember">Add Team Member</button> */}
         <CreateTask project={project} open={openModal} onClose={() => setOpenModal(false)}/>
       </>
