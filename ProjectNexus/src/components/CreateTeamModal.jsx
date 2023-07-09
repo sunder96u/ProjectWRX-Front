@@ -64,7 +64,7 @@ const CreateTeamModal = ({open, onClose}) => {
         <p onClick={onClose} className="closeBtn">X</p>
         <h2>Create a New Team</h2>
         <form onSubmit={handleSubmitTeam}>
-          <label htmlFor="teamName">Team Name:</label>
+          <label htmlFor="teamName">YOUR NEW TEAM'S NAME:</label>
           <input
             type="text"
             id="teamName"
@@ -72,7 +72,7 @@ const CreateTeamModal = ({open, onClose}) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-            <label htmlFor="description">Description:</label>
+            <label htmlFor="description">ADD A SHORT DESCRIPTION OF YOUR TEAM:</label>
             <textarea
               id="description"
               placeholder='Description'
