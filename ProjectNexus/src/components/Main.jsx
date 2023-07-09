@@ -15,7 +15,6 @@ import Context from '../Context'
 import Profile from './Profile'
 
 
-
 export default function Main () {
 
     const [user, setUser] = useState("")
@@ -24,17 +23,17 @@ export default function Main () {
 
     if (userInfo.username === '') {
         return (
-            <>
+          <>
             <Routes>
                 <Route path="/" element={<Login />}/>
-                <Route path="/CreateUser" element={<CreateAccount />}/>
+                {/* <Route path="/CreateUser" element={<CreateAccount />}/> */}
+                <Route path="/Profile" element={<Profile />} />
             </Routes>
-            </>
-
+          </>
         )
     } else {
         return (
-            <>
+          <>
             <Routes>
                 <Route path="/" element={<TeamList />}/>
                 <Route path="/Team/:teamName" element={<Team />}/>
@@ -45,8 +44,7 @@ export default function Main () {
                 <Route path="/TaskList/:projId" element={<TaskList />}/>
                 <Route path="/TaskList" element={<TaskList />} />
             </Routes>
-            </>
+          </>
         )
     }
-
 }

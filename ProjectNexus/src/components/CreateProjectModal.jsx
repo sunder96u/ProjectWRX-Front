@@ -29,8 +29,7 @@ const CreateProjectModal = ({open, onClose}) => {
     {label: `Demo1`, value: `64a63f9c8eb8541d68cafc4b`}
   ]
 
-
-
+  
   useEffect(() => {
     const getTeamMembers = async () => {
       const users = await axios.get(`${BASE_URL}/team/${teamName.teamName}`)
@@ -75,11 +74,10 @@ const CreateProjectModal = ({open, onClose}) => {
     onClose()
 
     alert('Project created successfully!')
-  }
-
-  if (!open) return null
-  console.log(open)
-
+    
+ if (!open) return null
+ console.log(open)
+  
   return (
     <div className="overlay" onClick={onClose}>
       <div onClick={(e) => {e.stopPropagation()}} className="project-container">
@@ -93,14 +91,12 @@ const CreateProjectModal = ({open, onClose}) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-
           <label htmlFor="description">Description:</label>
           <textarea
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-
           <label htmlFor="dueDate">Due Date:</label>
           <input
             type="date"
@@ -108,20 +104,17 @@ const CreateProjectModal = ({open, onClose}) => {
             value={dateDue}
             onChange={(e) => setDateDue(e.target.value)}
           />
-
           <label htmlFor="projectMembers">Project Members:</label>
           <Select 
             id="projectMembers"
             defaultValue={`Select Team Members`}
             isMulti
             options={object}
-            />
-
-          <button type="submit" id="createProjBtn">Create Project</button>
+          />
+          <button type="submit" className="createBtn" id="createProjBtn">Create Project</button>
         </form>
       </div>
     </div>
-
   )
 }
 

@@ -64,45 +64,41 @@ const CreateTaskModal = ({open, onClose, project}) => {
   if (!open) return null
 
   return (
-    <div className="overlay" onCLick={onClose}>
-      <div onCLick={(e) => {e.stopPropagtion()}} className="task-container">
+
+    <div className="overlay" onClick={onClose}>
+      <div onClick={(e) => {e.stopPropagation()}} className="task-container">
         <p onClick={onClose} className="closeBtn">X</p>
         <h2>Create a New Task</h2>
         <form onSubmit={handleSubmitTask}>
-          <label htmlFor="taskName">Name:</label>
+          <label htmlFor="taskName">NAME:</label>
           <input
             type="text"
             id="taskName"
             value={taskName}
             onChange={(e) => setTaskName(e.target.value)}
-          />
-
-          <label htmlFor="description">Description:</label>
+           />
+          <label htmlFor="description">DESCRIPTION:</label>
           <textarea
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          />
-
-          <label htmlFor="dateDue">Due Date:</label>
+           />
+          <label htmlFor="dateDue">DUE DATE:</label>
           {/* Possibly add React datePicker */}
           <input
             type="date"
             id="dateDue"
             value={dateDue}
             onChange={(e) => setDateDue(e.target.value)}
-          />
-
-          <label htmlFor="selectUser">Team Member:</label>
+            />
+          <label htmlFor="selectUser">TEAM MEMBER:</label>
           <Select 
             id="projectMembers"
             defaultValue={`Select Team Members`}
             isMulti
             options={object}
-          />
-          
-
-          <button type="submit" id="createTaskBtn">Create Task</button>
+           />
+          <button type="submit" className="createBtn">Create Task</button>
         </form>
       </div>
     </div>

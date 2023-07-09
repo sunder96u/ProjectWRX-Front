@@ -3,24 +3,29 @@ import { useContext } from 'react'
 import Context from '../Context'
 
 export default function Header () {
-    const { userInfo, setUserInfo } = useContext(Context)
-    const userId = userInfo.userId
+  const { userInfo, setUserInfo } = useContext(Context)
+  const userId = userInfo.userId
 
-    return (
+  return (
 
-    <div className="navBar">
-      <ul>
-        <li>
-          <a className="menu" href="#">MENU</a>
-          <ul className='navBabies'>
-            <li><Link to="/">Teams</Link></li>
-            <li><Link to="/ProjectList">Projects</Link></li>
-            <li><Link to="/TaskList">Tasks</Link></li>
-            <li><Link to={"/Profile/"+{userId}}>Profile</Link></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    )
+  <div className="navBar">
+    <ul>
+      <li>
+        <a className="menu" href="#">MENU</a>
+        <ul className='navBabies'>
+          <li><Link to="/">Teams</Link></li>
+          <li><Link to="/ProjectList">Projects</Link></li>
+          <li><Link to="/TaskList">Tasks</Link></li>
+          <li><Link to={"/Profile/"+{userId}}>Profile</Link></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  )
 }
+
+
+
+
+
 
