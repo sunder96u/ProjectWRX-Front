@@ -68,65 +68,22 @@ const ProfilePage = () => {
 
   return (
     <div>
-      <div className="updateProfileForm">
+      <div className="updateProfileForm" onSubmit={handleSubmitProfile}>
             <h2>{user.firstName}'s profile</h2>
             <h5>Update your profile information by entering the new details in the form below and clicking the "Update Profile" button.</h5>
-            <form onSubmit={handleSubmitProfile}>
-                  <label>
-                        UPDATE FIRST NAME:
-                  <input
-                        type="text"
-                        name="firstName"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        placeholder={user.firstName}
-                  />
-                  </label>
-                  <br />
-                  <label>
-                        UPDATE LAST NAME:
-                  <input
-                        type="text"
-                        name="lastName"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        placeholder={user.lastName}
-                  />
-                  </label>
-                  <br />
-                  <label>
-                        UPDATE USERNAME:
-                  <input
-                        type="text"
-                        name="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder={user.username}
-                  />
-                  </label>
-                  <br />
-                  <label>
-                        UPDATE EMAIL ADDRESS:
-                  <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder={user.email}
-                  />
-                  </label>
-                  <br />
-                  <label>
-                        UPDATE PASSWORD:
-                  <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder={user.password}
-                  />
-                  </label>
-                  <br />
+            <form>
+                  <label htmlFor="firstName">UPDATE FIRST NAME:</label>
+                  <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder={user.firstName}/>
+                  <label htmlFor="lastName">UPDATE LAST NAME:</label>
+                  <input type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder={user.lastName}/>
+                  <label htmlFor="userName">UPDATE USERNAME:</label>
+                  <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder={user.username}/>
+                  <label htmlFor="email">UPDATE EMAIL ADDRESS:</label>
+                  <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={user.email}/>
+                  <label htmlFor="password">UPDATE PASSWORD:</label>
+                  <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={user.password}/>
+                  <label htmlFor="passwordValid">CONFIRM NEW PASSWORD:</label>
+                  <input type="password" id="passwordValid" onChange={handleChange} value={formState.passwordValid}></input>
                   <button className="submit" id="updateBtn" type="submit">Update Profile</button>
             </form>
       </div>

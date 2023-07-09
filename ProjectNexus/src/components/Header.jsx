@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './Nav'
 import Context from '../Context'
-import logo_img from '../images/projectwrxlogo.png'
+import logo_img from '../assets/projectwrxlogo.png'
 
 
 export default function Header () {
