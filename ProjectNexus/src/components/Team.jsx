@@ -116,11 +116,11 @@ export default function Team () {
             }
               {/* create map since there will be more than 1 project/member */}
             <CreateProject open={openModal} onClose={() => setOpenModal(false)} />
-            <div className='col' id='teamInfo'>
-                <button classname="submit" id="backBtn" onClick={() => back()}>Return</button>
-                <button className="createBtn" id="updateBtn" onClick={()=> updateTeam()}>Update Team</button>
-                <button className="submit" id="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
-                <button className="submit" id="openBtn" onClick={()=> setOpenModal(true)}> Add Project</button>
+            <div className='teamButtons'>
+                <button className="createBtn" onClick={()=> updateTeam()}>Update Team</button>
+                <button className="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
+                <button className="submit" id="addBtn" onClick={()=> setOpenModal(true)}> Add Project</button>
+                <button className="backBtn" onClick={() => back()}>Return</button>
             </div>
           </div>
         )
