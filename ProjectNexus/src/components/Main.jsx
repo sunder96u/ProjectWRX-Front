@@ -26,7 +26,7 @@ export default function Main () {
           <>
             <Routes>
                 <Route path="/" element={<Login />}/>
-                {/* <Route path="/CreateUser" element={<CreateAccount />}/> */}
+                <Route path="/CreateUser" element={<CreateAccount />}/>
                 <Route path="/Profile" element={<Profile />} />
             </Routes>
           </>

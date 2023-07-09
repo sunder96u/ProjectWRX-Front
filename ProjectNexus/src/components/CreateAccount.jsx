@@ -64,7 +64,7 @@ export default function CreateAccount () {
                 <input type="password" id="password" onChange={handleChange} value={formState.password}></input>
                 <label htmlFor="passwordValid">CONFIRM PASSWORD:</label>
                 <input type="password" id="passwordValid" onChange={handleChange} value={formState.passwordValid}></input>
-                <button type="submit" className="create">Create New Account</button>
+                <button type="submit" className="createBtn">Create New Account</button>
                 <button type="cancel" className="submit" onClick={cancel}>Cancel</button>
             </form>       
         </div>
