@@ -32,19 +32,19 @@ const TeamList = () => {
         return (
             <>
                 <div className='team-list'>
-                    <h2>TEAMS</h2>
+                    <h2 className="teamHeader">TEAMS</h2>
                     {
                         teams.data.teams.map((team)=> (
                             <div key={team.name} onClick={()=>showTeam(team)}
                             className='team'>
-                                <h4 id="teamName">{team.name}</h4>
-                                <ul>
+                                <ul className='allTeamInfo'>
+                                    <h4 id="teamName">{team.name}</h4>
                                     <li className="leader" id="teamLeader">Team Leader: {team.memberAdmin[0].username}</li>
                                 </ul>
                             </div>
                         ))
                     }
-                    <button onClick={() => setOpenModal(true)}>Create Team</button>
+                    <button className="createBtn" id="createTeamBtn" onClick={() => setOpenModal(true)}>Create Team</button>
                 </div>
                 <CreateTeam open={openModal} onClose={() => setOpenModal(false)}/>
             </>
