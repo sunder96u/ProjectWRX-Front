@@ -56,7 +56,7 @@ header {
   color: #000000;
   text-align: center;
   font-family: Urbanist;
-  font-size: 20px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -341,7 +341,7 @@ p.invalid {
 }
 
 #rejectBtn{
-  color:
+  color: red;
 }
 
 .container {
@@ -350,6 +350,10 @@ p.invalid {
 
 #task {
   display: flex;
+}
+
+#createTeamBtn {
+  margin-top: 50px;
 }
 
 .teamsList {
@@ -365,29 +369,39 @@ p.invalid {
 }
 
 .team {
+  background:
+    linear-gradient(#ccd6ba, transparent),
+    linear-gradient(to top left, #005eff, transparent),
+    linear-gradient(to top right,#0eeb3a, transparent);
+  background-blend-mode: screen;
   word-wrap: normal;
   flex-direction: column;
   flex-wrap: wrap;
   height: auto; 
   justify-content: center;
   align-items: center;
-  border: 2.5px solid rgb(172 215 50 / 0.95);
-  /* padding: 30px; */
+  border: 2.5px solid rgb(172 215 50);
+  padding: 30px;
   margin: 15px 150px 15px 150px;
   border-radius: 5px 5px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
 }
 
+.allTeamInfo{
+  border-radius: 5px;
+  background-color: #E7E7E7;
+}
+
 #teamName {
   display: flex;
   align-items: center;
-  background-color: rgb(172 215 50 / 0.75);
+  background-color: transparent;
   justify-content: center;
 }
 
 .leader {
   font-size: 2vmin;
-  background-color: rgb(172 215 50 / 0.75);
+  background-color: transparent;
   padding-bottom: 15px;
 }
 
@@ -412,7 +426,7 @@ h3 {
 
 h4 {
   font-size: 26px;
-  padding-top: 45px;
+  padding-top: 20px;
   padding-bottom: 15px;
   letter-spacing: .55vw;
   margin: 0 auto;
@@ -429,8 +443,7 @@ h4 {
   border: 2px solid black;
 } */
 
-
-#teamInfo {
+.teamInfo {
   display: flex; 
   flex-wrap: wrap;
   word-wrap: normal;
