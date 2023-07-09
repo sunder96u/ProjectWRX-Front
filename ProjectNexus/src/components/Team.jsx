@@ -45,9 +45,9 @@ export default function Team () {
   }
 
 
-  const showProject = (project) => {
-    navigate(`/Project/${project}`)
-}
+//   const showProject = (project) => {
+//     navigate(`/Project/${project}`)
+// }
 
 // const showMemberAdmin = (memberAdmin) => {
 //   navigate(`/Team/${memberAdmin}`)
