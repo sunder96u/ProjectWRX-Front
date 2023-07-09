@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Select from 'react-select'
 
-const CreateTaskModal = ({open, onClose, project}) => {
+const CreateTaskModal = ({open, onClose}, props) => {
   const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
   const [taskName, setTaskName] = useState('')
@@ -16,11 +17,14 @@ const CreateTaskModal = ({open, onClose, project}) => {
     dateDue,
   }
 
+  let navigate = useNavigate()
+
   useEffect(() => {
+    console.log(props)
     const getTeamMembers = async () => {
-      for (let i = 0; i < project.data.projectMembers.length; i++) {
-        let userId = project.data.projectMembers[i]._id
-        let userName = project.data.projectMembers.username
+      for (let i = 0; i < props.project.data.projectMembers.length; i++) {
+        let userId = props.project.data.projectMembers[i]._id
+        let userName = props.project.data.projectMembers.username
         const newObj = []
         newObj['value'] = userId
         newObj['label'] = userName
@@ -36,6 +40,7 @@ const CreateTaskModal = ({open, onClose, project}) => {
         `https://projectwrx-back-production.up.railway.app/api/task/`,
         taskData
       )
+      navigate("/")
       console.log('Task created successfully:', response.data)
     } catch (error) {
       console.error('Error creating Task:', error)
@@ -64,45 +69,41 @@ const CreateTaskModal = ({open, onClose, project}) => {
   if (!open) return null
 
   return (
-    <div className="overlay" onCLick={onClose}>
-      <div onCLick={(e) => {e.stopPropagtion()}} className="task-container">
+
+    <div className="overlay" onClick={onClose}>
+      <div onClick={(e) => {e.stopPropagation()}} className="task-container">
         <p onClick={onClose} className="closeBtn">X</p>
         <h2>Create a New Task</h2>
         <form onSubmit={handleSubmitTask}>
-          <label htmlFor="taskName">Name:</label>
+          <label htmlFor="taskName">NAME:</label>
           <input
             type="text"
             id="taskName"
             value={taskName}
             onChange={(e) => setTaskName(e.target.value)}
-          />
-
-          <label htmlFor="description">Description:</label>
+           />
+          <label htmlFor="description">DESCRIPTION:</label>
           <textarea
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          />
-
-          <label htmlFor="dateDue">Due Date:</label>
+           />
+          <label htmlFor="dateDue">DUE DATE:</label>
           {/* Possibly add React datePicker */}
           <input
             type="date"
             id="dateDue"
             value={dateDue}
             onChange={(e) => setDateDue(e.target.value)}
-          />
-
-          <label htmlFor="selectUser">Team Member:</label>
+            />
+          <label htmlFor="selectUser">TEAM MEMBER:</label>
           <Select 
             id="projectMembers"
             defaultValue={`Select Team Members`}
             isMulti
             options={object}
-          />
-          
-
-          <button type="submit" id="createTaskBtn">Create Task</button>
+           />
+          <button type="submit" className="createBtn">Create Task</button>
         </form>
       </div>
     </div>
@@ -111,3 +112,4 @@ const CreateTaskModal = ({open, onClose, project}) => {
 }
 
 export default CreateTaskModal
+

@@ -68,67 +68,23 @@ const ProfilePage = () => {
 
   return (
     <div>
-      <div className="updateProfileForm">
+      <div className="updateProfileForm" onSubmit={handleSubmitProfile}>
             <h2>{user.firstName}'s profile</h2>
-            <h5 style={{ color: 'red' }}>Update your profile info by entering the new details and clicking the "Update Profile" button.</h5>
-
-            <form onSubmit={handleSubmitProfile}>
-                  <label>
-                        First Name:
-                  <input
-                        type="text"
-                        name="firstName"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        placeholder={user.firstName}
-                  />
-                  </label>
-                  <br />
-                  <label>
-                        Last Name:
-                  <input
-                        type="text"
-                        name="lastName"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        placeholder={user.lastName}
-                  />
-                  </label>
-                  <br />
-                  <label>
-                        Username:
-                  <input
-                        type="text"
-                        name="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder={user.username}
-                  />
-                  </label>
-                  <br />
-                  <label>
-                        Email:
-                  <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder={user.email}
-                  />
-                  </label>
-                  <br />
-                  <label>
-                        Password:
-                  <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder={user.password}
-                  />
-                  </label>
-                  <br />
-                  <button type="submit">Update Profile</button>
+            <h5>Update your profile information by entering the new details in the form below and clicking the "Update Profile" button.</h5>
+            <form>
+                  <label htmlFor="firstName">UPDATE FIRST NAME:</label>
+                  <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder={user.firstName}/>
+                  <label htmlFor="lastName">UPDATE LAST NAME:</label>
+                  <input type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder={user.lastName}/>
+                  <label htmlFor="userName">UPDATE USERNAME:</label>
+                  <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder={user.username}/>
+                  <label htmlFor="email">UPDATE EMAIL ADDRESS:</label>
+                  <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={user.email}/>
+                  <label htmlFor="password">UPDATE PASSWORD:</label>
+                  <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={user.password}/>
+                  {/* <label htmlFor="passwordValid">CONFIRM NEW PASSWORD:</label>
+                  <input type="password" id="passwordValid" onChange={(e) => setPasswordValid(e.target.value)} value={formState.passwordValid}></input> */}
+                  <button className="submit" id="updateBtn" type="submit">Update Profile</button>
             </form>
       </div>
     </div>
@@ -136,3 +92,4 @@ const ProfilePage = () => {
 }
 
 export default ProfilePage
+

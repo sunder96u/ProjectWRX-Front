@@ -17,13 +17,12 @@ const CreateTeamModal = ({open, onClose}) => {
   const [memberAdmin, setMemberAdmin] = useState('')
   // const [members, setMembers] = useState([])
   const { userInfo, setUserInfo } = useContext(Context)
-  console.log(open)
- 
+
 
   const teamData = {
     name,
     description,
-    memberAdmin
+    memberAdmin,
     // members,
   }
 
@@ -59,7 +58,6 @@ const CreateTeamModal = ({open, onClose}) => {
   }
 
   if (!open) return null
-
   return (
     <div className="overlay" onClick={onClose}>
       <div onClick={(e) => {e.stopPropagation()}} className="modal-container">
@@ -74,16 +72,14 @@ const CreateTeamModal = ({open, onClose}) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
-            placeholder='Description'
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          ></textarea>
-
-          <button type="submit" id="createTeamBtn">Create Team</button>
+            <label htmlFor="description">Description:</label>
+            <textarea
+              id="description"
+              placeholder='Description'
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              ></textarea>
+          <button type="submit" className="createBtn" id="createTeamBtn">Create Team</button>
         </form>
       </div>
     </div>
@@ -91,3 +87,4 @@ const CreateTeamModal = ({open, onClose}) => {
 }
 
 export default CreateTeamModal
+
