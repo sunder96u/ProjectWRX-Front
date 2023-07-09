@@ -7,10 +7,6 @@ export default function Team () {
 
   const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
   const teamName = useParams()
-  console.log(teamName)
-  console.log(teamName.teamName)
-  const teamId = '64a2d0fbec7a43704466b667'
-  const projectId = "64a5c7ba4e30f16593883ab1"
 
   const [team, setTeam] = useState([])
   const [openModal, setOpenModal] = useState(false)
@@ -22,8 +18,6 @@ export default function Team () {
     }
     getTeam()
   }, [])
-
-  console.log(team)
  
   const updateTeam = async (id) => {
     await axios.put(`${BASE_URL}team/${id}`, team)
@@ -54,6 +48,8 @@ export default function Team () {
 // const showMemberAdmin = (memberAdmin) => {
 //   navigate(`/Team/${memberAdmin}`)
 // }
+
+console.log(team)
 
   if (!team.data) {
     return (
@@ -118,12 +114,11 @@ export default function Team () {
             <CreateProject open={openModal} onClose={() => setOpenModal(false)} />
             <div className='col' id='teamInfo'>
                 <button classname="submit" id="backBtn" onClick={() => back()}>Return</button>
-                <button className="createBtn" id="updateBtn" onClick={()=> updateTeam()}>Update Team</button>
-                <button className="submit" id="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
+                <button className="createBtn" id="updateBtn" onClick={()=> updateTeam(team.data[0]._id)}>Update Team</button>
+                <button className="submit" id="deleteBtn" onClick={()=> deleteTeam(team.data[0]._id)}>Delete Team</button>
                 <button className="submit" id="openBtn" onClick={()=> setOpenModal(true)}> Add Project</button>
             </div>
           </div>
         )
     } }
   }
-
