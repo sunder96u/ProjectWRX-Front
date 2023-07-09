@@ -48,16 +48,11 @@ header {
 }
 
 .teamHeader {
-  /* width: 80vmin;
-  height: 43vmin; */
-
-  /* color: #000000; */
   text-align: center;
   font-family: Urbanist;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
-  /* line-height: normal; */
   letter-spacing: 4px;
 }
 
@@ -137,7 +132,7 @@ a .menu {
 }
 
 input {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 #userName {
@@ -239,12 +234,6 @@ p.invalid {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.closeBtn {
-  position: fixed;
-  top: 8px;
-  right: 15px;
-}
-
 #resetBtn {
   display: flex;
   width: 298px;
@@ -305,6 +294,24 @@ p.invalid {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+.closeBtn {
+  font-weight: bolder;
+  background-color: black;
+  align-items: center;
+  color: white;
+  position: fixed;
+  padding: 4px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  top: 8px;
+  right: 15px;
+}
+
+.closeBtn:hover {
+  background-color: #E7E7E7;
+  border: 2px solid black;
+  color: red;
+}
 
 .backBtn{
   display: flex;
@@ -380,14 +387,14 @@ p.invalid {
   align-items: center;
   border: 2.5px solid rgb(172 215 50);
   padding: 30px;
-  margin: 15px 150px 15px 150px;
+  margin: 20px 150px 15px 150px;
   border-radius: 5px 5px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45)
 }
 
 .allTeamInfo{
   border-radius: 5px;
-  background-color: rgb(231, 231, 231, 0.35);
+  background-color: rgb(231, 231, 231, 0.65);
 }
 
 #teamName {
@@ -395,6 +402,19 @@ p.invalid {
   align-items: center;
   background-color: transparent;
   justify-content: center;
+}
+
+#createTeamName {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #E7E7E7;
+}
+
+#description {
+  background-color: #E7E7E7;
+  font-size: 15px;
+  max-height: 400px;
 }
 
 .leader {
@@ -405,7 +425,10 @@ p.invalid {
   background-color: transparent;
   padding-bottom: 15px;
   align-content: center;
+}
 
+#createTeamHeader {
+  border-top: none;
 }
 
 h2 {
@@ -570,18 +593,13 @@ ul li ul li:hover {background: #666;} */
 }
 
 .modal-container {
+  display: flex;
+  border-radius: 10px;;
   max-width: 600px;
   width: 100%;
   position: fixed;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75)
-}
-
-.closeBtn {
-  position: fixed;
-  top: 8px;
-  right: 15px;
 }
