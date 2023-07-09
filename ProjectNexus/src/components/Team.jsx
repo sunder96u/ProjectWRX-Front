@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
+import CreateProject from './CreateProjectModal'
 
 export default function Team () {
 
@@ -12,6 +13,7 @@ export default function Team () {
   const projectId = "64a5c7ba4e30f16593883ab1"
 
   const [team, setTeam] = useState([])
+  const [openModal, setOpenModal] = useState(false)
 
   useEffect(() => {
     const getTeam = async () => {
@@ -45,9 +47,9 @@ export default function Team () {
   }
 
 
-  const showProject = (project) => {
-    navigate(`/Project/${project}`)
-}
+//   const showProject = (project) => {
+//     navigate(`/Project/${project}`)
+// }
 
 // const showMemberAdmin = (memberAdmin) => {
 //   navigate(`/Team/${memberAdmin}`)
@@ -66,6 +68,7 @@ export default function Team () {
               <button id="backBtn" onClick={() => back()}>Return</button>
               <button id="updateBtn" onClick={()=> updateTeam()}>Update Team</button>
               <button id="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
+              <button onClick={() => setOpenModal(true)} >Add Project</button>
           </div>
             {
               team.data.map((data)=> (
@@ -118,6 +121,7 @@ export default function Team () {
                   ))
                 }
               {/* create map since there will be more than 1 project/member */}
+              <CreateProject open={openModal} onClose={() => setOpenModal(false)} />
           </div>
         )
     } }

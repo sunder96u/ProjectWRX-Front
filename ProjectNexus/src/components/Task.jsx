@@ -15,7 +15,7 @@ export default function Task () {
     const [user, setUser] = useState([])
     const { userInfo, setUserInfo } = useContext(Context)
     let navigate = useNavigate()
-    const isAdmin = false
+    let isAdmin = false
 
     useEffect(() => {
         const getTask = async () => {

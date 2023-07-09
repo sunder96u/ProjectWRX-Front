@@ -24,11 +24,11 @@ export default function Login () {
         console.log(formState)
         const user = async () => {
             const myUser = await axios.get(`${BASE_URL}user/username/${formState.userName}`)
-            console.log(myUser)
+
             if (myUser.data.length === 0) {
                 setIsActive(true)
             }
-            console.log(myUser)
+
             if (myUser.data[0].password === formState.password) {
                 setUserInfo({...userInfo, firstName: myUser.data[0].firstName, lastName: myUser.data[0].lastName, userId: myUser.data[0]._id, username: myUser.data[0].username})
                 setIsActive(false)

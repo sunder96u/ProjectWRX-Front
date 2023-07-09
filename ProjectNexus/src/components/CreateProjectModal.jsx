@@ -4,7 +4,7 @@ import axios from 'axios'
 import Context from '../Context'
 import Select from 'react-select'
 
-const CreateProjectModal = (props) => {
+const CreateProjectModal = ({open, onClose}) => {
   const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
   const [name, setName] = useState('')
@@ -72,50 +72,56 @@ const CreateProjectModal = (props) => {
     setName('')
     setDescription('')
     setDateDue('')
+    onClose()
 
     alert('Project created successfully!')
   }
 
-  console.log(object)
+  if (!open) return null
+  console.log(open)
 
   return (
-    <div className="project-container">
-      <h2>Create a New Project</h2>
-      <form onSubmit={handleSubmitProject}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <label htmlFor="description">Description:</label>
-        <textarea
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-
-        <label htmlFor="dueDate">Due Date:</label>
-        <input
-          type="date"
-          id="dueDate"
-          value={dateDue}
-          onChange={(e) => setDateDue(e.target.value)}
-        />
-
-        <label htmlFor="projectMembers">Project Members:</label>
-        <Select 
-          id="projectMembers"
-          defaultValue={`Select Team Members`}
-          isMulti
-          options={object}
+    <div className="overlay" onClick={onClose}>
+      <div onClick={(e) => {e.stopPropagation()}} className="project-container">
+        <p onClick={onClose} className="closeBtn">X</p>
+        <h2>Create a New Project</h2>
+        <form onSubmit={handleSubmitProject}>
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
 
-        <button type="submit" id="createProjBtn">Create Project</button>
-      </form>
+          <label htmlFor="description">Description:</label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+
+          <label htmlFor="dueDate">Due Date:</label>
+          <input
+            type="date"
+            id="dueDate"
+            value={dateDue}
+            onChange={(e) => setDateDue(e.target.value)}
+          />
+
+          <label htmlFor="projectMembers">Project Members:</label>
+          <Select 
+            id="projectMembers"
+            defaultValue={`Select Team Members`}
+            isMulti
+            options={object}
+            />
+
+          <button type="submit" id="createProjBtn">Create Project</button>
+        </form>
+      </div>
     </div>
+
   )
 }
 
