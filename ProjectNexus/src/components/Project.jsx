@@ -10,6 +10,7 @@ const Project = (props) => {
     
     const [projectId, setProjectId] = useState('')
     const [project, setProject] = useState(null)
+    const [openModal, setOpenModal] = useState(false)
 
     let { id } = useParams()
 
@@ -46,9 +47,8 @@ const Project = (props) => {
                 </ul>
             </div>
         </div>
-        <button>Create Task</button>
-        <button>Add TeamMember</button>
-        <CreateTask project={project}/>
+        <button onClick={() => setOpenModal(true)}>Create Task</button>
+        <CreateTask project={project} open={openModal} onClose={() => setOpenModal(false)}/>
         </>
 
     ) :null;
