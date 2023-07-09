@@ -47,7 +47,15 @@ header {
   border-bottom: green solid 40px;
 }
 
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* min-height: max-content; */
+}
+
 .teamHeader {
+  border-top: none;
   text-align: center;
   font-family: Urbanist;
   font-size: 40px;
@@ -66,6 +74,7 @@ header {
   /* transition: 0s 180s; */
   background-color: #ACD732;
   /* transition-duration: 10s; */
+  /* border-bottom: 4px solid black; */
 }
 
  ul {
@@ -158,6 +167,10 @@ li {
   list-style: none;
 }
 
+p {
+  background-color: transparent;
+}
+
 form {
   background:
     linear-gradient(#ccd6ba, transparent),
@@ -173,9 +186,12 @@ form {
 
 .loglogformform {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
   min-width: 50px;
   padding: 20px;
-  /* min-height: 500px; */
+  /* max-width: 800px; */
 }
 
 h1 {
@@ -326,7 +342,7 @@ p.invalid {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-#deleteBtn {
+.deleteBtn {
   display: flex;
   width: 298px;
   height: 20px;
@@ -335,8 +351,21 @@ p.invalid {
   align-items: center;
   gap: 9px;
   background: black;
-  color: red;
+  color: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.deleteBtn:hover {
+  color: red;
+}
+
+#addBtn:hover {
+  background-color: black;
+  color: white;
+}
+
+#createTeamBtn {
+  margin-top: 50px;
 }
 
 #completeTaskBtn{}
@@ -357,20 +386,56 @@ p.invalid {
   display: flex;
 }
 
-#createTeamBtn {
-  margin-top: 50px;
-}
 
 .teamsList {
-  display: flex;
+  background:
+  linear-gradient(#ccd6ba, transparent),
+  linear-gradient(to top left, #005eff, transparent),
+  linear-gradient(to top right,#0eeb3a, transparent);
+  background-blend-mode: screen;
+  word-wrap: normal;
   flex-direction: column;
   flex-wrap: wrap;
+  height: auto; 
+  justify-content: center;
+  align-items: center;
+  border: 2.5px solid rgb(172 215 50);
+  padding: 30px;
+  margin: 20px 150px 15px 150px;
+  border-radius: 5px 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45)
+  }
+
+.teamButtons {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: transparent;
+  align-items: center;
+}
+
+.teamInfo {
+  display: flex; 
+  flex-wrap: wrap;
   word-wrap: normal;
-  margin: 50px 150px 50px 150px;
-  width: auto;
-  border: 2px purple solid;
-  height: auto;
-  /* padding: 15px; */
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  margin: 50px 20px 50px 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgb(231, 231, 231, 0.65);
+}
+
+.team-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20px;
+  padding: 10px;
+  font-style: italic;
+  background-color: transparent;
 }
 
 .team {
@@ -469,24 +534,7 @@ h4 {
   border: 2px solid black;
 } */
 
-.teamInfo {
-  display: flex; 
-  flex-wrap: wrap;
-  word-wrap: normal;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid blue;
-  margin: 50px 20px 50px 20px;
-  padding: 20px;
-}
 
-.team-title {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 18px;
-  padding: 10px;
-}
 
 .indProject {
   color: Red;
@@ -496,7 +544,7 @@ h4 {
   color: Blue;
 }
 
-.indiv-Project {
+.indProject {
 }
 
 .project-info {

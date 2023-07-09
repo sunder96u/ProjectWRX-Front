@@ -41,11 +41,10 @@ const Project = (props) => {
     return project ? (
       <>
          <div className="indiv-Project" onClick={() => TaskList(project.data._id)}>
-            <h1>Project</h1>
             <div className="project-info">
                 <ul>
                     <li key={project.data.name}>
-                        <p>Project {project.data.name}</p>
+                        <h2>Project: {project.data.name}</h2>
                         <p>Description: {project.data.description}</p>
                         <p>Date Created: {project.data.createdAt}</p>
                         <p>Date Due: {project.data.dateDue}</p>
