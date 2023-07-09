@@ -117,6 +117,6 @@ const CreateProjectModal = ({open, onClose}) => {
     </div>
   )
 }
-
+}
 export default CreateProjectModal
 
