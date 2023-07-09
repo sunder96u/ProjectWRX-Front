@@ -119,8 +119,8 @@ export default function Team () {
             <div className='col' id='teamInfo'>
                 <button classname="submit" id="backBtn" onClick={() => back()}>Return</button>
                 <button className="createBtn" id="updateBtn" onClick={()=> updateTeam()}>Update Team</button>
-                <button className="createBtn" id="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
-                <button className="createBtn" id="openBtn" onClick={()=> setOpenModal(true)}> Add Project</button>
+                <button className="submit" id="deleteBtn" onClick={()=> deleteTeam()}>Delete Team</button>
+                <button className="submit" id="openBtn" onClick={()=> setOpenModal(true)}> Add Project</button>
             </div>
           </div>
         )

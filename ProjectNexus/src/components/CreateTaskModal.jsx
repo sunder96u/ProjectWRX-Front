@@ -64,6 +64,7 @@ const CreateTaskModal = ({open, onClose, project}) => {
   if (!open) return null
 
   return (
+
     <div className="overlay" onClick={onClose}>
       <div onClick={(e) => {e.stopPropagation()}} className="task-container">
         <p onClick={onClose} className="closeBtn">X</p>
@@ -75,15 +76,13 @@ const CreateTaskModal = ({open, onClose, project}) => {
             id="taskName"
             value={taskName}
             onChange={(e) => setTaskName(e.target.value)}
-            />
-
+           />
           <label htmlFor="description">DESCRIPTION:</label>
           <textarea
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            />
-
+           />
           <label htmlFor="dateDue">DUE DATE:</label>
           {/* Possibly add React datePicker */}
           <input
@@ -92,20 +91,18 @@ const CreateTaskModal = ({open, onClose, project}) => {
             value={dateDue}
             onChange={(e) => setDateDue(e.target.value)}
             />
-
           <label htmlFor="selectUser">TEAM MEMBER:</label>
           <Select 
             id="projectMembers"
             defaultValue={`Select Team Members`}
             isMulti
             options={object}
-            />
-          
-
+           />
           <button type="submit" className="createBtn">Create Task</button>
         </form>
       </div>
     </div>
+
   )
 }
 
