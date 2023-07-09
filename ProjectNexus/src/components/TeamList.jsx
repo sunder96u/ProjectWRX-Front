@@ -37,12 +37,10 @@ const TeamList = () => {
                         teams.data.teams.map((team)=> (
                             <div key={team.name} onClick={()=>showTeam(team)}
                             className='team'>
-                                <div className='allTeamInfo'>
+                                <ul className='allTeamInfo'>
                                     <h4 id="teamName">{team.name}</h4>
-                                    <ul className='allTeamInfo'>
-                                        <li className="leader" id="teamLeader">Team Leader: {team.memberAdmin[0].username}</li>
-                                    </ul>
-                                </div>
+                                    <li className="leader" id="teamLeader">Team Leader: {team.memberAdmin[0].username}</li>
+                                </ul>
                             </div>
                         ))
                     }
