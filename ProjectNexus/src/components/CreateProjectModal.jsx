@@ -72,6 +72,7 @@ const CreateProjectModal = ({open, onClose}) => {
     setName('')
     setDescription('')
     setDateDue('')
+    onClose()
 
     alert('Project created successfully!')
   }

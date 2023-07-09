@@ -56,6 +56,7 @@ const CreateTaskModal = ({open, onClose, project}) => {
     setTaskName('')
     setDescription('')
     setDateDue('')
+    onClose()
 
     alert('Task created successfully!')
   }

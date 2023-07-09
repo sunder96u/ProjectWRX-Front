@@ -52,6 +52,7 @@ const CreateTeamModal = ({open, onClose}) => {
     setName('')
     setDescription('')
     setMemberAdmin('')
+    onClose()
     // setMembers([])
 
     alert('Team created successfully!')
