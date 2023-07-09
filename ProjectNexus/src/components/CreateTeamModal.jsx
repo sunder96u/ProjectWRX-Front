@@ -62,12 +62,12 @@ const CreateTeamModal = ({open, onClose}) => {
     <div className="overlay" onClick={onClose}>
       <div onClick={(e) => {e.stopPropagation()}} className="modal-container">
         <p onClick={onClose} className="closeBtn">X</p>
-        <h2>Create a New Team</h2>
+        <h2 id="createTeamHeader">Create a New Team</h2>
         <form onSubmit={handleSubmitTeam}>
           <label htmlFor="teamName">YOUR NEW TEAM'S NAME:</label>
           <input
             type="text"
-            id="teamName"
+            id="createTeamName"
             placeholder='Team Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
