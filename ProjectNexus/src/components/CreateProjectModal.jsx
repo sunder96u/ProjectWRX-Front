@@ -91,32 +91,34 @@ const CreateProjectModal = ({open, onClose}) => {
   
   return (
     <div className="overlay" onClick={onClose}>
-      <div onClick={(e) => {e.stopPropagation()}} className="project-container modal-container">
+      <div onClick={(e) => {e.stopPropagation()}} className="modal-container">
         <p onClick={onClose} className="closeBtn">X</p>
-        <h2>Create a New Project</h2>
+        <h2 className="createProjectHeader">Create a New Project</h2>
         <form onSubmit={handleSubmitProject}>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">PROJECT NAME:</label>
           <input
             type="text"
             id="name"
             value={name}
+            placeholder="Enter projects name here..."
             onChange={(e) => setName(e.target.value)}
           />
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="description">DESCRIPTION:</label>
           <textarea
+          placeholder='Enter a short description of your project here...'
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          <label htmlFor="dueDate">Due Date:</label>
+          <label htmlFor="dueDate">DUE DATE:</label>
           <input
             type="date"
             id="dueDate"
             value={dateDue}
             onChange={(e) => setDateDue(e.target.value)}
           />
-          <label htmlFor="projectMembers">Project Members:</label>
-          <Select 
+          <label htmlFor="projectMembers">PROJECT MEMBERS:</label>
+          <Select className='selectBar'
             id="projectMembers"
             defaultValue={`Select Team Members`}
             isMulti

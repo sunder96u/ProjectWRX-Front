@@ -172,6 +172,10 @@ p {
 }
 
 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
   background:
     linear-gradient(#ccd6ba, transparent),
     linear-gradient(to top left, #005eff, transparent),
@@ -183,6 +187,7 @@ form {
   flex-wrap: wrap;
   word-wrap: normal;
 }
+
 
 .loglogformform {
   display: flex;
@@ -248,6 +253,15 @@ p.invalid {
   background: rgb(172 215 50 / 0.35);
   color: black;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.createButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin-top: 20px;
 }
 
 #resetBtn {
@@ -378,6 +392,11 @@ p.invalid {
   color: red;
 }
 
+#createProjBtn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .container {
   display: flex;
 }
@@ -494,6 +513,17 @@ p.invalid {
 
 #createTeamHeader {
   border-top: none;
+}
+
+.createProjectHeader {
+  border-top: none;
+}
+
+.selectBar{
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  
 }
 
 h2 {

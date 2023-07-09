@@ -20,15 +20,13 @@ export default function Header () {
         )
     } else {
         return (
-            <div >    
-                <div className="header">
+            <div className="header">
+                <div>
                     <div>
-                        <div>
-                            {/* <h1>PROJECTWRX</h1> */}
-                            <Link to="/"><img className="logo" src={logo_img} alt="Project Wrx"/></Link>
-                        </div>
-                        <Nav />
+                        {/* <h1>PROJECTWRX</h1> */}
+                        <Link to="/"><img className="logo" src={logo_img} alt="Project Wrx"/></Link>
                     </div>
+                    <Nav />
                 </div>
             </div>
         )
