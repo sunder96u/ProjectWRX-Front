@@ -70,11 +70,10 @@ const ProfilePage = () => {
     <div>
       <div className="updateProfileForm">
             <h2>{user.firstName}'s profile</h2>
-            <h5 style={{ color: 'red' }}>Update your profile info by entering the new details and clicking the "Update Profile" button.</h5>
-
+            <h5>Update your profile information by entering the new details in the form below and clicking the "Update Profile" button.</h5>
             <form onSubmit={handleSubmitProfile}>
                   <label>
-                        First Name:
+                        UPDATE FIRST NAME:
                   <input
                         type="text"
                         name="firstName"
@@ -85,7 +84,7 @@ const ProfilePage = () => {
                   </label>
                   <br />
                   <label>
-                        Last Name:
+                        UPDATE LAST NAME:
                   <input
                         type="text"
                         name="lastName"
@@ -96,7 +95,7 @@ const ProfilePage = () => {
                   </label>
                   <br />
                   <label>
-                        Username:
+                        UPDATE USERNAME:
                   <input
                         type="text"
                         name="username"
@@ -107,7 +106,7 @@ const ProfilePage = () => {
                   </label>
                   <br />
                   <label>
-                        Email:
+                        UPDATE EMAIL ADDRESS:
                   <input
                         type="email"
                         name="email"
@@ -118,7 +117,7 @@ const ProfilePage = () => {
                   </label>
                   <br />
                   <label>
-                        Password:
+                        UPDATE PASSWORD:
                   <input
                         type="password"
                         name="password"
@@ -128,7 +127,7 @@ const ProfilePage = () => {
                   />
                   </label>
                   <br />
-                  <button type="submit">Update Profile</button>
+                  <button className="submit" id="updateBtn" type="submit">Update Profile</button>
             </form>
       </div>
     </div>

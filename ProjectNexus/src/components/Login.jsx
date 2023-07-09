@@ -24,11 +24,11 @@ export default function Login () {
         console.log(formState)
         const user = async () => {
             const myUser = await axios.get(`${BASE_URL}user/username/${formState.userName}`)
-            console.log(myUser)
+           
             if (myUser.data.length === 0) {
                 setIsActive(true)
             }
-            console.log(myUser)
+        
             if (myUser.data[0].password === formState.password) {
                 setUserInfo({...userInfo, firstName: myUser.data[0].firstName, lastName: myUser.data[0].lastName, userId: myUser.data[0]._id, username: myUser.data[0].username})
                 setIsActive(false)
@@ -64,14 +64,14 @@ export default function Login () {
                     <label htmlFor="password">PASSWORD: </label>
                     <input type="password" placeholder="Enter password here" id="password" onChange={handleChange} value={formState.password} />
                     <p className="invalid" style={{display: isActive? "": "none"}}>Username or password is incorrect. Please try again!</p>
-                    <button type="submit" id="submit">LOG IN</button>
-                    <button type="reset" id="resetBtn">forgot password ?</button>
+                    <button type="submit" className="submit">LOG IN</button>
+                    <button type="reset" className="submit" id="resetBtn">forgot password ?</button>
                 </form>       
             </div>
             <div className="lineBreak"></div>
             <div>
                 {/* <button onClick={() => logIn()}>Login W/ Google</button> */}
-                <button id="createBtn" onClick={create}>New Here? &nbsp;Create An Account</button>
+                <button className="createBtn" onClick={create}>New Here? &nbsp;Create An Account</button>
             </div>
         </div>
     )

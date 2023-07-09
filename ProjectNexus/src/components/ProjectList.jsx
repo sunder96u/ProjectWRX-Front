@@ -55,7 +55,6 @@ const ProjectList = (props) => {
         const getProjects = async () => {
           const response = await axios.get(`${BASE_URL}project`)
           setProjects(response)
-          console.log(response)
         }
         getProjects()
       }, [])
@@ -74,13 +73,13 @@ const ProjectList = (props) => {
         return (
             <div className='project-list'>
                 {
-                    projects.data.projects.map((project)=> (
+                    projects.data.map((project)=> (
                         <div key={project.name} onClick={()=>showProject(project)}>
                             <h3>{project.name}</h3>
                             <div className='project-info'>
                                 <ul>
                                     <li>Description: {project.description}</li>
-                                    <li>Project Leader: {project.projectLeader}</li>
+                                    <li>Project Leader: {project.teamLeader}</li>
                                     <li>Project Due Date: {project.dateDue}</li>
                                 </ul>
                             </div>

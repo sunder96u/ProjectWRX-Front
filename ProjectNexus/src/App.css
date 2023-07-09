@@ -66,8 +66,8 @@ header {
 .navBar {
   display: flex;
   flex-direction: row;
-  align-items:flex-start;
-  justify-content: space-around;
+  align-items: flex-end;
+  justify-content: space-between;
   margin-left: 0;
   margin-right: 85%;
   /* transition: 0s 180s; */
@@ -80,21 +80,21 @@ header {
   /* background-color: rgb(172, 215, 50, 0.0); */
 }
 
-/* .menu {
+a .menu {
   background-color: #E7E7E7;
-} */
+  margin-left: 15px;
+}
+
 /* NAVBAR */
 .navBar ul {
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   padding: 0;
   margin: 0;
-  /* margin-left: 0;
-  margin-right: 80; */
   /* position: sticky; */
   /* top: 50px; */
-  transition-duration: 10s;
+  /* transition-duration: 10s; */
   /* background-color: #ACD732; */
 }
 
@@ -117,7 +117,6 @@ header {
 }
 
 .navBar ul li a:hover {
-  background-color: #A2C1BE;
   border-radius: 6px;
   /* transition: 0s 180s; */
   transition-duration: 10s;
@@ -133,10 +132,9 @@ header {
   display: inline-flex;
   position: absolute;
   /* margin-top: 5px; */
-  background: #ACD732;
+  background: transparent;
   border-radius: 6px;
   /* width: 100%; */
-  padding: 10px 2px;
   box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -209,8 +207,8 @@ p.invalid {
 
 }
 
-#submit {
-  color: black;
+.submit {
+  color: white;
   display: flex;
   width: 298px;
   height: 25px;
@@ -218,9 +216,35 @@ p.invalid {
   margin-top: 10px;
   justify-content: center;
   align-items: center;
+  align-content: center;
   gap: 9px;
-  background: rgb(172 215 50 / 0.75);
+  background: black;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+}
+
+.submit:hover {
+  background-color: #ACD732;
+}
+
+.createBtn {
+  display: flex;
+  width: 298px;
+  height: 20px;
+  margin: 0 auto;
+  margin-bottom: 14px;
+  padding: 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  background: rgb(172 215 50 / 0.35);
+  color: black;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.closeBtn {
+  position: fixed;
+  top: 8px;
+  right: 15px;
 }
 
 #resetBtn {
@@ -234,6 +258,12 @@ p.invalid {
   background: white;
   color: black;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  opacity: 20%;
+}
+
+#resetBtn:hover {
+  background-color: white;
+  color: black;
 }
 
 #cancelBtn {
@@ -277,7 +307,8 @@ p.invalid {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-#backBtn{
+
+.backBtn{
   display: flex;
   width: 298px;
   height: 20px;
@@ -303,6 +334,16 @@ p.invalid {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+#completeTaskBtn{}
+
+#acceptBtn{
+  color: green;
+}
+
+#rejectBtn{
+  color:
+}
+
 .container {
   display: flex;
 }
@@ -313,6 +354,7 @@ p.invalid {
 
 .teamsList {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   word-wrap: normal;
   margin: 50px 150px 50px 150px;
@@ -399,12 +441,21 @@ h4 {
   padding: 20px;
 }
 
-#team-title
+.team-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+  padding: 10px;
+}
 
+.indProject {
+  color: Red;
+}
 
-#reviewAcptBtn{}
-
-#reviewRjctBtn{}
+.indProject a:hover {
+  color: Blue;
+}
 
 .indiv-Project {
 }
@@ -438,6 +489,27 @@ a:link {
 a:hover {
   font: rgb(213, 36, 65);
 }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-container {
+  max-width: 600px;
+  width: 100%;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75)
+}
+
 
 /* a:visited {
   color: #ae7ef5

@@ -4,7 +4,12 @@ import axios from 'axios'
 import '../Modal.css'
 import Context from '../Context'
 
-const CreateTeamModal = () => {
+const CreateTeamModal = ({open, onClose}) => {
+  
+  useEffect(() => {
+    setMemberAdmin(userInfo.userId)
+  }, [])
+
   const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
   const [name, setName] = useState('')
@@ -12,19 +17,17 @@ const CreateTeamModal = () => {
   const [memberAdmin, setMemberAdmin] = useState('')
   // const [members, setMembers] = useState([])
   const { userInfo, setUserInfo } = useContext(Context)
+  console.log(open)
 
   const teamData = {
     name,
     description,
-    memberAdmin
+    memberAdmin,
     // members,
   }
 
   let navigate = useNavigate()
  
-  useEffect(() => {
-    setMemberAdmin(userInfo.userId)
-  }, [])
 
   const saveTeamData = async () => {
     try {
@@ -49,34 +52,38 @@ const CreateTeamModal = () => {
     setName('')
     setDescription('')
     setMemberAdmin('')
+    onClose()
     // setMembers([])
 
     alert('Team created successfully!')
   }
 
+  if (!open) return null
+
   return (
-    <div className="modal-container">
-      <h2>Create a New Team</h2>
-      <form onSubmit={handleSubmitTeam}>
-        <label htmlFor="teamName">Team Name:</label>
-        <input
-          type="text"
-          id="teamName"
-          placeholder='Team Name'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <label htmlFor="description">Description:</label>
-        <textarea
-          id="description"
-          placeholder='Description'
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
-
-        <button type="submit" id="createTeamBtn">Create Team</button>
-      </form>
+    <div className="overlay" onClick={onClose}>
+      <div onClick={(e) => {e.stopPropagation()}} className="modal-container">
+        <p onClick={onClose} className="closeBtn">X</p>
+        <h2>Create a New Team</h2>
+        <form onSubmit={handleSubmitTeam}>
+          <label htmlFor="teamName">Team Name:</label>
+          <input
+            type="text"
+            id="teamName"
+            placeholder='Team Name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+            <label htmlFor="description">Description:</label>
+            <textarea
+              id="description"
+              placeholder='Description'
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              ></textarea>
+          <button type="submit" className="createBtn" id="createTeamBtn">Create Team</button>
+        </form>
+      </div>
     </div>
   )
 }

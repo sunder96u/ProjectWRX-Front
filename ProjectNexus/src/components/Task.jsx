@@ -15,7 +15,7 @@ export default function Task () {
     const [user, setUser] = useState([])
     const { userInfo, setUserInfo } = useContext(Context)
     let navigate = useNavigate()
-    const isAdmin = false
+    let isAdmin = false
 
     useEffect(() => {
         const getTask = async () => {
@@ -86,7 +86,7 @@ export default function Task () {
             return (
                 <div className="container" id="completedTask">
                     <div className="col">
-                        <button id="backBtn" onClick={() => back()}>Return</button>
+                        <button className="backBtn" onClick={() => back()}>Return</button>
                     </div>
                     <div className="col">
                         <div className="row">
@@ -107,7 +107,7 @@ export default function Task () {
                         <p>{task.data.description}</p>
                     </div>
                     <div className="col">
-                        <button id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
+                        <button className="submit" id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
                     </div>
                 </div>
             )
@@ -115,7 +115,7 @@ export default function Task () {
             return (
             <div className="container" id="notCompletedTask">
                     <div className="col">
-                        <button id="backBtn" onClick={() => back()}>Return</button>
+                        <button className="backBtn" onClick={() => back()}>Return</button>
                     </div>
                 <div className="col">
                     <div className="row">
@@ -140,7 +140,7 @@ export default function Task () {
                     <p>{task.data.description}</p>
                 </div>
                 <div className="col">
-                    <button id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
+                    <button className="submit" id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
                 </div>
             </div>
             )
@@ -150,7 +150,7 @@ export default function Task () {
             return (
                 <div className="container" id="task">
                     <div className="col">
-                        <button id="backBtn" onClick={() => back()}>Return</button>
+                        <button className="backBtn" onClick={() => back()}>Return</button>
                     </div>
                     <div className="col">
                         <div className="row">
@@ -171,7 +171,7 @@ export default function Task () {
                         <p>{task.data.description}</p>
                     </div>
                     <div className="col">
-                        <button id="completeTaskBtn" onClick={() => notComplete(task.data._id)}>Not Completed</button>
+                        <button className="submit" id="completeTaskBtn" onClick={() => notComplete(task.data._id)}>Not Completed</button>
                     </div>
                 </div>
             )
@@ -179,7 +179,7 @@ export default function Task () {
             return (
             <div className="container" id="task">
                     <div className="col">
-                        <button id="backBtn" onClick={() => back()}>Return</button>
+                        <button className="backBtn" onClick={() => back()}>Return</button>
                     </div>
                 <div className="col">
                     <div className="row">
@@ -204,8 +204,8 @@ export default function Task () {
                     <p>{task.data.description}</p>
                 </div>
                 <div className="col">
-                    <button id="reviewAcptBtn" onClick={() => ReviewComplete(task.data._id)}>Reviewed & Completed</button>
-                    <button id="reviewRjctBtn" onClick={() => ReviewRejected(task.data._id)}>Reviewed & Rejected</button>
+                    <button className="submit" id="acceptBtn" onClick={() => ReviewComplete(task.data._id)}>Reviewed & Completed</button>
+                    <button className="submit" id="rejectBtn" onClick={() => ReviewRejected(task.data._id)}>Reviewed & Rejected</button>
                 </div>
             </div>
             )   

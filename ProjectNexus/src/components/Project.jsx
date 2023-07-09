@@ -10,6 +10,7 @@ const Project = (props) => {
     
     const [projectId, setProjectId] = useState('')
     const [project, setProject] = useState(null)
+    const [openModal, setOpenModal] = useState(false)
 
     let { id } = useParams()
 
@@ -17,7 +18,6 @@ const Project = (props) => {
         let selectedProject = async() => {
             const response = await axios.get(`${BASE_URL}/project/${id}`)
             setProject(response)
-
         }
         setProject(), setProjectId()
         selectedProject()
@@ -38,17 +38,20 @@ const Project = (props) => {
             <div className="project-info">
                 <ul>
                     <li key={project.data.name}>
-                        <h3>Project {project.data.name}</h3>
-                        <h3>Description: {project.data.description}</h3>
-                        <h3>Date Created: {project.data.createdAt}</h3>
-                        <h3>Date Due: {project.data.dateDue}</h3>
+                        <p>Project {project.data.name}</p>
+                        <p>Description: {project.data.description}</p>
+                        <p>Date Created: {project.data.createdAt}</p>
+                        <p>Date Due: {project.data.dateDue}</p>
+                        <p>Team Members: {project.data.projectMembers}</p>
+                        <p>Project Tasks: {project.data.taskId}</p> 
+                        {/* probs not taskId or projectMembers tho */}
                     </li>
                 </ul>
             </div>
         </div>
-        <button>Create Task</button>
-        <button>Add TeamMember</button>
-        <CreateTask project={project}/>
+        <button className="createBtn" onClick={() => setOpenModal(true)}>Create Task</button>
+        {/* <button className="submit" id="addTeamMember">Add Team Member</button> */}
+        <CreateTask project={project} open={openModal} onClose={() => setOpenModal(false)}/>
         </>
 
     ) :null;
