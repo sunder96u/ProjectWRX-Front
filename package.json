@@ -2,7 +2,7 @@
   "name": "projectnexus",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://sunder96u.github.io/ProjectWRX-Front/ProjectNexus/dist/index.html",
+  "homepage": "https://sunder96u.github.io/ProjectWRX-Front/ProjectNexus/index.html",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
