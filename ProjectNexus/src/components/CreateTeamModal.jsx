@@ -5,7 +5,7 @@ import '../Modal.css'
 import Context from '../Context'
 
 const CreateTeamModal = ({open, onClose}) => {
-  
+
   useEffect(() => {
     setMemberAdmin(userInfo.userId)
   }, [])
@@ -28,7 +28,6 @@ const CreateTeamModal = ({open, onClose}) => {
 
   let navigate = useNavigate()
  
-
   const saveTeamData = async () => {
     try {
       const response = await axios.post(
@@ -59,7 +58,6 @@ const CreateTeamModal = ({open, onClose}) => {
   }
 
   if (!open) return null
-
   return (
     <div className="overlay" onClick={onClose}>
       <div onClick={(e) => {e.stopPropagation()}} className="modal-container">

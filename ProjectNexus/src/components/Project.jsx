@@ -32,8 +32,8 @@ const Project = (props) => {
     console.log(project)
 
     return project ? (
-        <>
-                <div className="indiv-Project" onClick={() => TaskList(project.data._id)}>
+      <>
+         <div className="indiv-Project" onClick={() => TaskList(project.data._id)}>
             <h1>Project</h1>
             <div className="project-info">
                 <ul>
@@ -52,8 +52,7 @@ const Project = (props) => {
         <button className="createBtn" onClick={() => setOpenModal(true)}>Create Task</button>
         {/* <button className="submit" id="addTeamMember">Add Team Member</button> */}
         <CreateTask project={project} open={openModal} onClose={() => setOpenModal(false)}/>
-        </>
-
+      </>
     ) :null;
 }
 

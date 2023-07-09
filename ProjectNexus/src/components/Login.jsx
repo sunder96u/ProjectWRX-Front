@@ -24,11 +24,11 @@ export default function Login () {
         console.log(formState)
         const user = async () => {
             const myUser = await axios.get(`${BASE_URL}user/username/${formState.userName}`)
-           
+
             if (myUser.data.length === 0) {
                 setIsActive(true)
             }
-        
+       
             if (myUser.data[0].password === formState.password) {
                 setUserInfo({...userInfo, firstName: myUser.data[0].firstName, lastName: myUser.data[0].lastName, userId: myUser.data[0]._id, username: myUser.data[0].username})
                 setIsActive(false)
@@ -71,8 +71,8 @@ export default function Login () {
             <div className="lineBreak"></div>
             <div>
                 {/* <button onClick={() => logIn()}>Login W/ Google</button> */}
-                <button className="createBtn" onClick={create}>New Here? &nbsp;Create An Account</button>
-            </div>
-        </div>
+            <button className="createBtn" onClick={create}>New Here? &nbsp;Create An Account</button>
+          </div>
+       </div>
     )
 }
