@@ -73,15 +73,15 @@ const ProfilePage = () => {
             <h5>Update your profile information by entering the new details in the form below and clicking the "Update Profile" button.</h5>
             <form>
                   <label htmlFor="firstName">UPDATE FIRST NAME:</label>
-                  <input type="text" placeholder="enter new first name here" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder={user.firstName}/>
+                  <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder={user.firstName}/>
                   <label htmlFor="lastName">UPDATE LAST NAME:</label>
-                  <input type="text" placeholder="enter new last name here" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder={user.lastName}/>
+                  <input type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder={user.lastName}/>
                   <label htmlFor="userName">UPDATE USERNAME:</label>
-                  <input type="text" placeholder="enter new username here" name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder={user.username}/>
+                  <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder={user.username}/>
                   <label htmlFor="email">UPDATE EMAIL ADDRESS:</label>
-                  <input type="email" placeholder="enter new email address here" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={user.email}/>
+                  <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={user.email}/>
                   <label htmlFor="password">UPDATE PASSWORD:</label>
-                  <input type="password" placeholder="enter new password here" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={user.password}/>
+                  <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={user.password}/>
                   {/* <label htmlFor="passwordValid">CONFIRM NEW PASSWORD:</label>
                   <input type="password" id="passwordValid" onChange={(e) => setPasswordValid(e.target.value)} value={formState.passwordValid}></input> */}
                   <button className="submit" id="updateBtn" type="submit">Update Profile</button>
