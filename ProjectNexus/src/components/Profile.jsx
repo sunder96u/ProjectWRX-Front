@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Context from '../Context'
 
-
 const ProfilePage = () => {
       const { userInfo, setUserInfo } = useContext(Context)
       const [ user, setUser ] = useState({})
@@ -92,4 +91,3 @@ const ProfilePage = () => {
 }
 
 export default ProfilePage
-

@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import CreateTeam from './CreateTeamModal'
 
-
 const TeamList = () => {
  
     useEffect(() => {

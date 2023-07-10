@@ -18,7 +18,6 @@ const CreateTeamModal = ({open, onClose}) => {
   // const [members, setMembers] = useState([])
   const { userInfo, setUserInfo } = useContext(Context)
 
-
   const teamData = {
     name,
     description,
@@ -87,4 +86,3 @@ const CreateTeamModal = ({open, onClose}) => {
 }
 
 export default CreateTeamModal
-

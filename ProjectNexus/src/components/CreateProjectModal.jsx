@@ -4,7 +4,7 @@ import axios from 'axios'
 import Context from '../Context'
 import Select from 'react-select'
 
-const CreateProjectModal = ({open, onClose}) => {
+const CreateProjectModal = ({open, onClose, myTeamId}) => {
   const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
   const [name, setName] = useState('')
@@ -15,6 +15,7 @@ const CreateProjectModal = ({open, onClose}) => {
   const [projectMembers, setProjectMembers] = useState([])
   const { userInfo, setUserInfo } = useContext(Context)
   const [teamMembers, setTeamMembers] = useState({})
+  const [teamId, setTeamId] = useState("")
   const teamName = useParams()
 
   let navigate = useNavigate()
@@ -26,6 +27,7 @@ const CreateProjectModal = ({open, onClose}) => {
     projectLeader,
     taskId,
     projectMembers,
+    teamId,
   }
 
   // work on dynamic all pieces there, maybe a filter until the axios call is made?
@@ -49,20 +51,24 @@ const CreateProjectModal = ({open, onClose}) => {
       }
     }
     setProjectLeader(userInfo.userId)
+    setTaskId(null)
+    setTeamId(myTeamId)
     getTeamMembers()
   }, [])
 
   console.log(userInfo.userId)
 
   const saveProjectData = async (projectData) => {
-    console.log(projectData)
     try {
-      const response = await axios.post(
-        `${BASE_URL}project/`,
-        projectData
-      )
+        const response = await axios.post(
+          `${BASE_URL}project/`,
+          projectData
+        )
+        console.log(response)
+      const teamProject = await axios.put(`${BASE_URL}team/update/update?id=${myTeamId}&whatToUpdate=projects&update=${response.data._id}`)
       navigate("/")
       console.log('Project created successfully:', response.data)
+      console.log(teamProject)
     } catch (error) {
       console.error('Error creating project:', error)
     }
@@ -74,7 +80,6 @@ const CreateProjectModal = ({open, onClose}) => {
     if (!name || !description || !dateDue || !teamMembers) {
       return alert('Please fill in all fields')
     }
-    setTaskId(null)
     saveProjectData(projectData)
 
     setName('')
@@ -131,7 +136,4 @@ const CreateProjectModal = ({open, onClose}) => {
   )
 }
 
-
 export default CreateProjectModal
-
-
