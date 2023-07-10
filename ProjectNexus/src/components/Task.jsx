@@ -119,7 +119,7 @@ export default function Task () {
                     </div>
                 <div className="col">
                     <div className="row">
-                        <p className="title">Task Name:</p>
+                        <p className="team-title">Task Name:</p>
                         <p>{task.data.taskName}</p>
                     </div>
                     <div className="row">
@@ -128,15 +128,15 @@ export default function Task () {
                     </div>
                 </div>
                 <div className="col">
-                    <p className="title"> Due Date:</p>
+                    <p className="team-title"> Due Date:</p>
                     <p className="date">{task.data.dateDue}</p>
                 </div>
                 <div className="col">
-                    <p className="title"> Submited By:</p>
+                    <p className="team-title"> Submited By:</p>
                     <p>{user.data.firstName} {user.data.lastName}</p>
                 </div>
                 <div className="col">
-                    <p className="title">Description:</p>
+                    <p className="team-title">Description:</p>
                     <p>{task.data.description}</p>
                 </div>
                 <div className="col">
@@ -154,20 +154,20 @@ export default function Task () {
                     </div>
                     <div className="col">
                         <div className="row">
-                            <p className="title">Task Name:</p>
+                            <p className="team-title">Task Name:</p>
                             <p>{task.data.taskName}</p>
                         </div>
                         <div className="row">
-                            <p className="title">Project Name:</p>
+                            <p className="team-title">Project Name:</p>
                             <p>{project.data.name}</p>
                         </div>
                     </div>
                     <div className="col">
-                        <p className="title"> Due Date:</p>
+                        <p className="team-title"> Due Date:</p>
                         <p className="date">{task.data.dateDue}</p>
                     </div>
                     <div className="col">
-                        <p className="title">Description:</p>
+                        <p className="team-title">Description:</p>
                         <p>{task.data.description}</p>
                     </div>
                     <div className="col">
@@ -183,24 +183,24 @@ export default function Task () {
                     </div>
                 <div className="col">
                     <div className="row">
-                        <p className="title">Task Name:</p>
+                        <p className="team-title">Task Name:</p>
                         <p>{task.data.taskName}</p>
                     </div>
                     <div className="row">
-                        <p className="title">Project Name:</p>
+                        <p className="team-title">Project Name:</p>
                         <p>{project.data.name}</p>
                     </div>
                 </div>
                 <div className="col">
-                    <p className="title"> Due Date:</p>
+                    <p className="team-title"> Due Date:</p>
                     <p className="date">{task.data.dateDue}</p>
                 </div>
                 <div className="col">
-                    <p className="title"> Submitted By:</p>
+                    <p className="team-title"> Submitted By:</p>
                     <p>{user.data.firstName} {user.data.lastName}</p>
                 </div>
                 <div className="col">
-                    <p className="title">Description:</p>
+                    <p className="team-title">Description:</p>
                     <p>{task.data.description}</p>
                 </div>
                 <div className="col">

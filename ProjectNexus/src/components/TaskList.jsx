@@ -60,16 +60,49 @@ export default function TaskList () {
     } else {
 
     return (
-        <div className="taskList">
+        <div className="taskContainer">
             <div className="row">
                 <div className="col">
-                    <h3 className="title">Not Completed:</h3>
+                    <h3 className="taskTitle">Not Completed:</h3>
                 </div>
                 {notCompletedTask.data.map(task => 
-                    <div className="container" id="taskListNCContainer">
-                        <div className="row" key={task._id} onClick={() => taskDetails(task._id)}>
+                    <div className="taskBox" id="taskListNCContainer">
+                        <div className='taskInner'>
+                            <div className="row" key={task._id} onClick={() => taskDetails(task._id)}>
+                                <div className="col">
+                                    <h4 className="titleSmall">Task: {task.taskName}</h4>
+                                </div>
+                                <div className="col">
+                                    <p className="titleSmall">Project Name:</p>
+                                    <p>{project.data.name}</p>
+                                </div>
+                                <div className="col">
+                                    <p className="titleSmall">Due Date:</p>
+                                    <p>{task.dateDue}</p>
+                                </div>
+                                <div className="col">
+                                    <p className="titleSmall">User:</p>
+                                    <p>{user.data.firstName} {user.data.lastName}</p>
+                                </div>
+                                <div className="col">
+                                    <p className="titleSmall">Description:</p>
+                                    <p className="desc">{task.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+            </div>
+            <div className="row">
+                <div className="col">
+                    <h3 className="taskTitle">Completed:</h3>
+                </div>
+                {completedTask.data.map(task => 
+                    <div className="taskBox" key={task._id} onClick={() => taskDetails(task._id)}>
+                        <div className='taskInner'>
                             <div className="col">
-                                <h4 className="titleSmall">Task: {task.taskName}</h4>
+                                <h4 className="titleSmall">Task Name: {task.taskName}</h4>
                             </div>
                             <div className="col">
                                 <p className="titleSmall">Project Name:</p>
@@ -87,36 +120,6 @@ export default function TaskList () {
                                 <p className="titleSmall">Description:</p>
                                 <p className="desc">{task.description}</p>
                             </div>
-                        </div>
-                    </div>
-                )}
-
-            </div>
-            <div className="row">
-                <div className="col">
-                    <h3 className="title">Completed:</h3>
-                </div>
-                {completedTask.data.map(task => 
-                    <div className="row" key={task._id} onClick={() => taskDetails(task._id)}>
-                        <div className="col">
-                            <p className="titleSmall">Task Name:</p>
-                            <p>{task.taskName}</p>
-                        </div>
-                         <div className="col">
-                            <p className="titleSmall">Project Name:</p>
-                            <p>{project.data.name}</p>
-                        </div>
-                        <div className="col">
-                            <p className="titleSmall">Due Date:</p>
-                            <p>{task.dateDue}</p>
-                        </div>
-                        <div className="col">
-                            <p className="titleSmall">User:</p>
-                            <p>{user.data.firstName} {user.data.lastName}</p>
-                        </div>
-                        <div className="col">
-                            <p className="titleSmall">Description:</p>
-                            <p className="desc">{task.description}</p>
                         </div>
                     </div>
                 )}
