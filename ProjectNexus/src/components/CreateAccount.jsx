@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
-
 export default function CreateAccount () {
 
     const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
