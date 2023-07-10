@@ -65,84 +65,84 @@ header {
   letter-spacing: 4px;
 }
 
+.navBabies {
+  color: black;
+  font-size: 20px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  border-bottom: 2px solid black;
+}
 .navBar {
+  display: inline-flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-height: 50px;
+}
+
+a {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-left: 0;
-  margin-right: 85%;
-  /* transition: 0s 180s; */
-  background-color: #ACD732;
-  /* transition-duration: 10s; */
-  /* border-bottom: 4px solid black; */
-}
-
- /* ul {
-  transition: 0s 180s;
-  background-color: rgb(172, 215, 50, 0.0);
-} */
-a {
+  justify-content: space-evenly;
   text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-a .menu {
-  background-color: #E7E7E7;
-  margin-left: 15px;
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-/* NAVBAR */
 .navBar ul {
   display: flex;
-  justify-content: space-evenly;
-  /* align-items: flex-start; */
-  padding: 0;
-  margin: 0;
-  /* position: sticky; */
-  /* top: 50px; */
-  /* transition-duration: 10s; */
-  /* background-color: #ACD732; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
-.navBar ul li {
+/* .navBar ul li {
+  display: flexbox;
+  flex-direction: row;
   list-style: none;
   padding: 4px;
   position: relative;
-  transition: 17.5s;
   display: block;
-  /* background-color: #ACD732; */
-}
+} */
 
-.navBar ul li a {
+/* .navBar ul li a {
   color: #000;
   letter-spacing: 12.8px;
   padding: 5px 10px;
   background-color: #ACD732;
   border-radius: 7px;
-  transition-duration: 10s;
-}
+} */
 
-.navBar ul li a:hover {
+/* .navBar ul li a:hover {
   border-radius: 6px;
-  /* transition: 0s 180s; */
-  transition-duration: 10s;
   text-decoration: none;
-}
+} */
 
-.navBar ul li ul {
+/* .navBar ul li ul {
   display: none;
-  /* background-color: #ACD732; */
-}
+} */
 
-.navBar ul li:hover ul {
+/* .navBar ul li:hover ul {
   display: inline-flex;
   position: absolute;
-  /* margin-top: 5px; */
   background: transparent;
   border-radius: 6px;
-  /* width: 100%; */
   box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.5);
-}
+} */
 
 input {
   font-size: 15px;
@@ -179,18 +179,25 @@ p {
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: left;
   padding: 15px;
   background:
     linear-gradient(#ccd6ba, transparent),
     linear-gradient(to top left, #005eff, transparent),
     linear-gradient(to top right,#0eeb3a, transparent);
   background-blend-mode: screen;
-  display: flex;
-  justify-content: center;
   font-family: 'Raleway', sans-serif;
-  flex-wrap: wrap;
   word-wrap: normal;
-  max-width: 80%;
+  width: 70%;
+  max-width: 1000px;
+}
+
+.updateProfileForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .createUserForm {
@@ -454,6 +461,8 @@ p.invalid {
   margin: 20px 150px 15px 150px;
   border-radius: 5px 5px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45);
+  width: 70%;
+  max-width: 1000px;
 }
 
 .teamButtons {
@@ -474,7 +483,15 @@ p.invalid {
   margin: 50px 20px 50px 20px;
   padding: 20px;
   border-radius: 5px;
+  background-color: rgb(231, 231, 231, 0.25);
+}
+
+.teamContainer {
+  flex-direction: column;
+  margin: 20px;
+  border: 1.5px solid white;
   background-color: rgb(231, 231, 231, 0.65);
+  border-radius: 5px;
 }
 
 .teamInfo.row {
@@ -494,22 +511,23 @@ p.invalid {
 }
 
 .team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background:
     linear-gradient(#ccd6ba, transparent),
     linear-gradient(to top left, #005eff, transparent),
     linear-gradient(to top right,#0eeb3a, transparent);
   background-blend-mode: screen;
   word-wrap: normal;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: auto; 
-  justify-content: center;
-  align-items: center;
   border: 2.5px solid rgb(172 215 50);
+  border-radius: 5px 5px;
   padding: 30px;
   margin: 20px 150px 15px 150px;
-  border-radius: 5px 5px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45)
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45);
+  width: 70%;
+  max-width: 1000px;
 }
 
 .allTeamInfo{
@@ -563,13 +581,13 @@ p.invalid {
 }
 
 h2 {
+  margin-top: 30px;
+  margin-bottom: 20px;
   font-size: 35px;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 5px;
   letter-spacing: .55vw;
-  margin: 0 auto;
   font-family: 'Raleway', sans-serif;
-  border-top: black 2px solid;
 }
 
 h3 {
@@ -578,7 +596,6 @@ h3 {
   letter-spacing: .55vw;
   margin: 0 auto;
   font-family: 'Raleway', sans-serif;
-  border-top: black 2px solid;
 }
 
 h4 {
@@ -701,6 +718,7 @@ p.footer {
   width: 70%;
   max-width: 1000px;
 }
+
 .col {
   background-color: transparent;
 }
@@ -725,6 +743,7 @@ p.footer {
 }
 
 .taskTitle {
+  margin-top: 20px;
   font-size: 35px;
 }
 
@@ -766,6 +785,26 @@ a:hover {
   /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
+  }
+  .loglogformform {
+    width: 300px;
+  }
+  .team-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .teamsList {
+    width: 300px;
+  }
+  form {
+    width: 300px;
+  }
+  .updateProfileForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
