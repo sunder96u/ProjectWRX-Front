@@ -1,7 +1,7 @@
 # ProjectWRX-
 ![ProjectWRX](https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80)
 
-CLICK HERE TO LAUNCH PROJECTWRX - (ADD LINK HERE)
+CLICK HERE TO LAUNCH - <a href="https://projectwrx.netlify.app/">ProjectWRX</a>
 
 ## Overview 
 We live in a fast-paced world where managing multiple tasks and coordinating teams can become overwhelming and chaotic. It's easy to lose track of project progress, deadlines, and who's responsible for what. We recognized this challenge and created ProjectWorx to simplify project management and streamline collaboration.
