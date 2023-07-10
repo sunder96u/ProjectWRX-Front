@@ -44,3 +44,15 @@ Visit: ProjectWRX (link soon to come)
 
 ## Create an Account:
 ![image](https://github.com/sunder96u/ProjectWRX-Front/assets/132020474/0a0b593b-f69d-40eb-8ff5-b8fa73a22409)
+
+
+## Future Updates
+
+- Add time due to both tasks and projects
+- Add OAuth functionality
+- Add forgot password functionality
+- Add tasks to your Google Calendar
+- Add task/project update notifications and email update capabilities
+- Add profile pictures to users
+- Add password for Teams so team projects and tasks are not available to be viewed by users not on a team
+- Add points system that rewards points for completing tasks before deadlines to be monitored by team or project leaders
