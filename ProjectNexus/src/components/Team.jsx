@@ -40,7 +40,6 @@ export default function Team () {
     navigate(`/Project/${id}`)
   }
 
-
 //   const showProject = (project) => {
 //     navigate(`/Project/${project}`)
 // }
@@ -112,7 +111,7 @@ console.log(team)
               ))
             }
               {/* create map since there will be more than 1 project/member */}
-            <CreateProject open={openModal} onClose={() => setOpenModal(false)} />
+            <CreateProject open={openModal} onClose={() => setOpenModal(false)} myTeamId={team.data[0]._id}/>
             <div className='teamButtons'>
                 <button className="createBtn" onClick={()=> updateTeam(team.data[0]._id)}>Update Team</button>
                 <button className="deleteBtn" onClick={()=> deleteTeam(team.data[0]._id)}>Delete Team</button>
