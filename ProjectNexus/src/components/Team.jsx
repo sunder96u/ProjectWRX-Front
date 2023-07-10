@@ -59,55 +59,56 @@ console.log(team)
     if (Team) {
         console.log(team.data)
         return (
-          <div className='teamsList'>
-            {/* above classname may need to be changed to background */}
-            {
-              team.data.map((data)=> (
-              <div key={data.name} 
-              // onClick={()=>showMemberAdmin(memberAdmin)} 
-                className='teamInfo'>
-                  {/* ABOVE CLASSNAME MAY NEED TO BE MEMBERADMIN BUT PRETTY SURE I GOT RID OF THAT CLASS */}
-                      {/* mapping out teams */}
-                  <div className='col'>
-                    <div className='row'>
-                      <h3 className='teamHeader' id="team-name">Team {data.name}</h3>
+          <div className='teamsListContainer'>
+            <div className='teamsList'>
+              {/* above classname may need to be changed to background */}
+              {
+                team.data.map((data)=> (
+                <div key={data.name} 
+                // onClick={()=>showMemberAdmin(memberAdmin)} 
+                  className='teamInfo'>
+                    {/* ABOVE CLASSNAME MAY NEED TO BE MEMBERADMIN BUT PRETTY SURE I GOT RID OF THAT CLASS */}
+                        {/* mapping out teams */}
+                    <div className='col'>
+                      <div className='row'>
+                        <h3 className='teamHeader' id="team-name">Team {data.name}</h3>
+                      </div>
+                      <div className='row'>
+                        <p className='team-title' id="team-leader">Team Leader:</p>
+                        <p>{data.memberAdmin[0].username}</p>
+                      </div>
+                      <div className='row'>
+                        <p className='team-title'>Team Description:</p>
+                        <p>{data.description}</p>
+                      </div>
                     </div>
+                    {/* mapping out project names */}
                     <div className='row'>
-                      <p className='team-title' id="team-leader">Team Leader:</p>
-                      <p>{data.memberAdmin[0].username}</p>
-                    </div>
-                    <div className='row'>
-                      <p className='team-title'>Team Description:</p>
-                      <p>{data.description}</p>
-                    </div>
-                  </div>
-                  {/* mapping out project names */}
-                  <div className='row'>
-                    <p className='team-title' id="team-projects">Team Projects:</p>
-                    {
-                      team.data[0].projects.map((project)=> (
-                        <div key={project.name} onClick={() => showProject(project._id)} classname='team-projects'>
-                          <ul>
-                            <li>
-                              <a className='indProject'>{project.name}</a>
-                            </li>
-                          </ul>
-                          </div>
-                      ))
-                      }
-                  </div>
-                  {/* mapping out team members */}
-                  <div className='row'>
-                    <p className='team-title' id="team-members">Team Members:</p>
+                      <p className='team-title' id="team-projects">Team Projects:</p>
                       {
-                        team.data[0].member.map((member)=> (
-                          <div key={member.username} onClick={() => showMember(member)} className='team-members'>
-                            <p>{member.username}</p>
-                          </div>
+                        team.data[0].projects.map((project)=> (
+                          <div key={project.name} onClick={() => showProject(project._id)} classname='team-projects'>
+                            <ul>
+                              <li>
+                                <a className='indProject'>{project.name}</a>
+                              </li>
+                            </ul>
+                            </div>
                         ))
-                      }
+                        }
+                    </div>
+                    {/* mapping out team members */}
+                    <div className='row'>
+                      <p className='team-title' id="team-members">Team Members:</p>
+                        {
+                          team.data[0].member.map((member)=> (
+                            <div key={member.username} onClick={() => showMember(member)} className='team-members'>
+                              <p>{member.username}</p>
+                            </div>
+                          ))
+                        }
+                    </div>
                   </div>
-                </div>
               ))
             }
               {/* create map since there will be more than 1 project/member */}
@@ -117,7 +118,7 @@ console.log(team)
                 <button className="deleteBtn" onClick={()=> deleteTeam(team.data[0]._id)}>Delete Team</button>
                 <button className="submit" id="addBtn" onClick={()=> setOpenModal(true)}> Add Project</button>
                 <button className="backBtn" onClick={() => back()}>Return</button>
-
+            </div>
             </div>
           </div>
         )
