@@ -83,13 +83,44 @@ export default function Task () {
     } else if (!task.data.completed) {
         if (!isAdmin) {
             return (
-                <div className="container" id="completedTask">
-                    <div className="col">
-                        <button className="backBtn" onClick={() => back()}>Return</button>
+            <div className="taskElement">
+                <div className="taskBox" id="completedTask">
+                    <div className='taskContainer'>
+                        <div className="col">
+                            <div className="row">
+                                <p className="title"></p>
+                                <h4>{task.data.taskName}</h4>
+                            </div>
+                            <div className="row">
+                                <p className="title">Project Name:</p>
+                                <p>{project.data.name}</p>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <p className="title"> Due Date:</p>
+                            <p className="date">{task.data.dateDue}</p>
+                        </div>
+                        <div className="col">
+                            <p className="title">Description:</p>
+                            <p>{task.data.description}</p>
+                        </div>
+                        <div className="col">
+                            <button className="submit" id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
+                        </div>
+                        <div className="col">
+                            <button className="backBtn" onClick={() => back()}>Return</button>
+                        </div>
                     </div>
+                </div>
+            </div>
+            )
+        } else {
+            return (
+            <div className="taskBox" id="notCompletedTask">
+                <div className='taskContainer'>
                     <div className="col">
                         <div className="row">
-                            <p className="title"></p>
+                            <p className="team-title">Task Name:</p>
                             <p>{task.data.taskName}</p>
                         </div>
                         <div className="row">
@@ -98,48 +129,21 @@ export default function Task () {
                         </div>
                     </div>
                     <div className="col">
-                        <p className="title"> Due Date:</p>
+                        <p className="team-title"> Due Date:</p>
                         <p className="date">{task.data.dateDue}</p>
                     </div>
                     <div className="col">
-                        <p className="title">Description:</p>
+                        <p className="team-title"> Submited By:</p>
+                        <p>{user.data.firstName} {user.data.lastName}</p>
+                    </div>
+                    <div className="col">
+                        <p className="team-title">Description:</p>
                         <p>{task.data.description}</p>
                     </div>
                     <div className="col">
                         <button className="submit" id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
-                    </div>
-                </div>
-            )
-        } else {
-            return (
-            <div className="container" id="notCompletedTask">
-                    <div className="col">
                         <button className="backBtn" onClick={() => back()}>Return</button>
                     </div>
-                <div className="col">
-                    <div className="row">
-                        <p className="team-title">Task Name:</p>
-                        <p>{task.data.taskName}</p>
-                    </div>
-                    <div className="row">
-                        <p className="title">Project Name:</p>
-                        <p>{project.data.name}</p>
-                    </div>
-                </div>
-                <div className="col">
-                    <p className="team-title"> Due Date:</p>
-                    <p className="date">{task.data.dateDue}</p>
-                </div>
-                <div className="col">
-                    <p className="team-title"> Submited By:</p>
-                    <p>{user.data.firstName} {user.data.lastName}</p>
-                </div>
-                <div className="col">
-                    <p className="team-title">Description:</p>
-                    <p>{task.data.description}</p>
-                </div>
-                <div className="col">
-                    <button className="submit" id="completeTaskBtn" onClick={() => complete(task.data._id)}>Completed</button>
                 </div>
             </div>
             )
@@ -147,10 +151,42 @@ export default function Task () {
     } else {
         if (!isAdmin) {
             return (
-                <div className="container" id="task">
-                    <div className="col">
-                        <button className="backBtn" onClick={() => back()}>Return</button>
+                <div className="taskBox" id="task">
+                    <div className='taskContainer'>
+                        <div className="col">
+                            <div className="row">
+                                <p className="team-title">Task Name:</p>
+                                <p>{task.data.taskName}</p>
+                            </div>
+                            <div className="row">
+                                <p className="team-title">Project Name:</p>
+                                <p>{project.data.name}</p>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <p className="team-title"> Due Date:</p>
+                            <p className="date">{task.data.dateDue}</p>
+                        </div>
+                        <div className="col">
+                            <p className="team-title">Description:</p>
+                            <p>{task.data.description}</p>
+                        </div>
+                        <div className="col">
+                            <button className="submit" id="completeTaskBtn" onClick={() => notComplete(task.data._id)}>Not Completed</button>
+                        </div>
+                        <div className="col">
+                            <button className="backBtn" onClick={() => back()}>Return</button>
+                        </div>
                     </div>
+                </div>
+            )
+        } else {
+            return (
+            <div className="taskBox" id="task">
+                <div className='taskContainer'>
+                        <div className="col">
+                            <button className="backBtn" onClick={() => back()}>Return</button>
+                        </div>
                     <div className="col">
                         <div className="row">
                             <p className="team-title">Task Name:</p>
@@ -166,49 +202,20 @@ export default function Task () {
                         <p className="date">{task.data.dateDue}</p>
                     </div>
                     <div className="col">
+                        <p className="team-title"> Submitted By:</p>
+                        <p>{user.data.firstName} {user.data.lastName}</p>
+                    </div>
+                    <div className="col">
                         <p className="team-title">Description:</p>
                         <p>{task.data.description}</p>
                     </div>
                     <div className="col">
-                        <button className="submit" id="completeTaskBtn" onClick={() => notComplete(task.data._id)}>Not Completed</button>
+                        <button className="submit" id="acceptBtn" onClick={() => ReviewComplete(task.data._id)}>Reviewed & Completed</button>
+                        <button className="submit" id="rejectBtn" onClick={() => ReviewRejected(task.data._id)}>Reviewed & Rejected</button>
                     </div>
-                </div>
-            )
-        } else {
-            return (
-            <div className="container" id="task">
-                    <div className="col">
-                        <button className="backBtn" onClick={() => back()}>Return</button>
-                    </div>
-                <div className="col">
-                    <div className="row">
-                        <p className="team-title">Task Name:</p>
-                        <p>{task.data.taskName}</p>
-                    </div>
-                    <div className="row">
-                        <p className="team-title">Project Name:</p>
-                        <p>{project.data.name}</p>
-                    </div>
-                </div>
-                <div className="col">
-                    <p className="team-title"> Due Date:</p>
-                    <p className="date">{task.data.dateDue}</p>
-                </div>
-                <div className="col">
-                    <p className="team-title"> Submitted By:</p>
-                    <p>{user.data.firstName} {user.data.lastName}</p>
-                </div>
-                <div className="col">
-                    <p className="team-title">Description:</p>
-                    <p>{task.data.description}</p>
-                </div>
-                <div className="col">
-                    <button className="submit" id="acceptBtn" onClick={() => ReviewComplete(task.data._id)}>Reviewed & Completed</button>
-                    <button className="submit" id="rejectBtn" onClick={() => ReviewRejected(task.data._id)}>Reviewed & Rejected</button>
                 </div>
             </div>
-            )   
-
+            )  
         }
     }
 

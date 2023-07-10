@@ -86,7 +86,7 @@ console.log(team)
                       <p className='team-title' id="team-projects">Team Projects:</p>
                       {
                         team.data[0].projects.map((project)=> (
-                          <div key={project.name} onClick={() => showProject(project._id)} classname='team-projects'>
+                          <div key={project.name} onClick={() => showProject(project._id)} className='team-projects'>
                             <ul>
                               <li>
                                 <a className='indProject'>{project.name}</a>
