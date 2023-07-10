@@ -10,13 +10,11 @@ html {
 
 img {
   max-width: 70vmax;
-  /* border-bottom: black solid 3px; */
   border-radius: 12px 12px;
   padding-top: 25px;
   width: 100%;
   font: 'Raleway', sans-serif;
   font-size: 45px;
-  /* box-shadow: 40px 10px 40px 40px #A2C1BE; */
 }
 
 body {
@@ -83,6 +81,7 @@ header {
 }
 
 a {
+  background-color: transparent;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -92,6 +91,7 @@ a {
 }
 
 li {
+  background-color: transparent;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -484,6 +484,12 @@ p.invalid {
   background-color: transparent;
 }
 
+.team-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .team {
   display: flex;
   flex-direction: column;
@@ -565,6 +571,7 @@ h2 {
 }
 
 h3 {
+  background-color: transparent;
   padding-top: 20px;
   padding-bottom: 15px;
   letter-spacing: .55vw;
@@ -581,18 +588,6 @@ h4 {
   font-family: 'Raleway', sans-serif;
 }
 
-/* #teamsList {
-  display: flex;
-  border: 2px solid black;
-} */
-/* 
-.background {
-  display: flex;
-  border: 2px solid black;
-} */
-
-
-
 .indProject {
   color: Blue;
 }
@@ -601,10 +596,59 @@ h4 {
   color: greenyellow;
 }
 
+.projectContainer {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectUL {
+  background-color: transparent;
+}
+
+.projectBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1.5px solid white;
+  background-color: rgb(231, 231, 231, 0.65);
+  border-radius: 5px;
+  min-width: 95%;
+  padding: 20px;
+}
 
 .project {
   border-top: none;
   background-color: transparent;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(#ccd6ba, transparent),
+    linear-gradient(to top left, #005eff, transparent),
+    linear-gradient(to top right,#0eeb3a, transparent);
+  background-blend-mode: screen;
+  word-wrap: normal;
+  border: 2.5px solid rgb(172 215 50);
+  border-radius: 5px 5px;
+  padding: 30px;
+  margin: 20px 150px 15px 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45);
+  width: 70%;
+  max-width: 1000px;
+  
 }
 
 .projectInfo {
@@ -763,11 +807,6 @@ a:hover {
   .loglogformform {
     width: 300px;
   }
-  .team-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   .teamsList {
     width: 300px;
   }
@@ -781,7 +820,7 @@ a:hover {
     justify-content: center;
   }
   .navBabies {
-    font-size: 12px;
+    font-size: 16px;
   }
   .navBar ul {
     padding: 5px;

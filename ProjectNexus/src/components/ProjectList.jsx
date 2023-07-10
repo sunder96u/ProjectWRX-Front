@@ -26,12 +26,13 @@ const ProjectList = (props) => {
     } else {
         return (
             <div className='project-list'>
+                <h2>Projects</h2>
                 {
                     projects.data.map((project)=> (
-                        <div key={project.name} onClick={()=>showProject(project._id)}>
-                            <h3>{project.name}</h3>
-                            <div className='project-info'>
-                                <ul>
+                        <div key={project.name} className='project-info' onClick={()=>showProject(project)}>
+                            <div className='projectBox'>
+                                <h3>{project.name}</h3>
+                                <ul className='projectUL'>
                                     <li>Description: {project.description}</li>
                                     <li>Project Leader: {project.teamLeader}</li>
                                     <li>Project Due Date: {project.dateDue}</li>
