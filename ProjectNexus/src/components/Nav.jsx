@@ -11,7 +11,6 @@ export default function Header () {
   <div className="navBar">
     <ul>
       <li>
-        <a className="menu" href="#">MENU</a>
         <ul className='navBabies'>
           <li><Link to="/">Teams</Link></li>
           <li><Link to="/ProjectList">Projects</Link></li>
