@@ -110,6 +110,7 @@ li {
 }
 
 input {
+  background-color: #E7E7E7;
   font-size: 15px;
 }
 
@@ -168,8 +169,16 @@ form {
   align-items: center;
 }
 
+.createUserContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .createUserForm {
   display: flex;
+  margin: auto;
   justify-content: center;
   align-content: center;
   width: 900px;
@@ -177,10 +186,8 @@ form {
 
 .userContainer {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
-  /* align-items: center;
-  max-width: 700px; */
+  align-items: center;
 }
 
 .loginForm {
@@ -197,7 +204,6 @@ form {
   align-items: left;
   min-width: 50px;
   padding: 20px;
-  /* max-width: 800px; */
 }
 
 h1 {
@@ -205,7 +211,6 @@ h1 {
   letter-spacing: .75vw;
   font-family: 'Raleway', sans-serif;
   border-top: black 2px solid;
-  /* font-style: italic; */
 }
 
 main {
@@ -251,8 +256,8 @@ p.invalid {
   justify-content: center;
   align-items: center;
   gap: 9px;
-  background: rgb(172 215 50 / 0.35);
-  color: black;
+  background: black;
+  color: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -301,21 +306,6 @@ p.invalid {
   display: flex;
   width: 298px;
   height: 20px;
-  padding: 18px;
-  justify-content: center;
-  align-items: center;
-  gap: 9px;
-  background: black;
-  color: white;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.createBtn {
-  display: flex;
-  width: 298px;
-  height: 20px;
-  margin: 0 auto;
-  margin-bottom: 14px;
   padding: 18px;
   justify-content: center;
   align-items: center;
@@ -383,8 +373,6 @@ p.invalid {
   margin-top: 50px;
 }
 
-/* #completeTaskBtn{} */
-
 #acceptBtn{
   color: green;
 }
@@ -401,8 +389,6 @@ p.invalid {
 .container {
   display: flex;
 }
-
-
 
 #createProj {
   margin-top: 20px;
@@ -798,6 +784,10 @@ a:hover {
 }
 
 .overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(0, 0, 0, 0.75);
   position: fixed;
   top: 0px;
@@ -807,7 +797,11 @@ a:hover {
 }
 
 .modal-container {
+  background-color: #E7E7E7;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   margin-top: 80px;
   max-width: 600px;
@@ -844,6 +838,12 @@ a:hover {
   }
   .navBar ul {
     padding: 5px;
+  }
+  .createBtn {
+    width: 70%;
+  }
+  .modal-container {
+    margin-bottom: 30px;
   }
 }
 
