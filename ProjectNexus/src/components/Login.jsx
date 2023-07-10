@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Context from "../Context"
 
-
 export default function Login () {
 
     const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"

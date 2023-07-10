@@ -4,7 +4,6 @@ import { useParams, useNavigate } from "react-router-dom"
 import axios from 'axios'
 import CreateTask from './CreateTaskModal'
 
-
 const Project = (props) => {
     const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
     

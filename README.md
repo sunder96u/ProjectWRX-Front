@@ -6,6 +6,8 @@ CLICK HERE TO LAUNCH PROJECTWRX - (ADD LINK HERE)
 ## Overview 
 We live in a fast-paced world where managing multiple tasks and coordinating teams can become overwhelming and chaotic. It's easy to lose track of project progress, deadlines, and who's responsible for what. We recognized this challenge and created ProjectWorx to simplify project management and streamline collaboration.
 
+Project WRX is designed to help organize team oriented projects, and tasks.  Using front end components and modals: users are allowed to create an account as well as a team, or teams; that include multiple users.  Within "teams", users can work with "projects" that house "tasks" for that specific project and it's assigned users.  CRUD functionality on the front end allows for users, projects, and tasks to be created, updated, and deleted.  Controllers encapsulate the backend CRUD and Models are used as abstract objects that are also polymorphic and inherit properties from input on the front end.
+
 ## Team Members
 <h4 align="left">Connect with us:</h4>
 Ashlan Filbrun <p align="left">

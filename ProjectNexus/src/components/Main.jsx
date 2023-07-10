@@ -14,7 +14,6 @@ import TeamList from './TeamList'
 import Context from '../Context'
 import Profile from './Profile'
 
-
 export default function Main () {
 
     const [user, setUser] = useState("")
@@ -48,4 +47,3 @@ export default function Main () {
         )
     }
 }
-

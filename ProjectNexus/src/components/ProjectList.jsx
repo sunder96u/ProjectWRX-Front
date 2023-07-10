@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-
 const ProjectList = (props) => {
     const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
@@ -18,10 +17,9 @@ const ProjectList = (props) => {
 
 
     let navigate = useNavigate()
-    const showProject = (project) => {
-        navigate(`/Project/${project.name}`)
+    const showProject = (id) => {
+        navigate(`/Project/${id}`)
     }
-    console.log(projects)
 
     if (!projects.data) {
         return <div>Loading...please wait.</div>
