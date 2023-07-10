@@ -1,46 +1,3 @@
-// import { useNavigate } from 'react-router-dom'
-
-// const ProjectList = (props) => {
-
-//     let navigate = useNavigate()
-//     const showProject = (project) => {
-//         navigate(`${project.name}`)
-//     }
-
-//     if (!props.projects) {
-//         return <div>Loading.. please wait.</div>
-//     } else {
-//         return (
-//             <div className="project-list">
-//             <h1>Projects</h1>
-//                 {props.projects.map((project) => (
-//                     <div>
-//                         <ul>
-//                             <li key={project.name} onClick={() => showProject(project)} classname='projects'>
-//                                 <h3>{project.name}</h3>
-//                                 <h3>{project.description}</h3>
-//                                 <h3>{project.projectLeader}</h3>
-//                                 <h3>{project.dateDue}</h3>
-//                             </li>
-//                         </ul>
-//                     </div>
-//                 ))}
-//         </div>
-//         )
-//     }
-// }
-
-// export default ProjectList
-
-
-
-
-
-
-
-
-
-
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -60,7 +17,6 @@ const ProjectList = (props) => {
       }, [])
 
 
-
     let navigate = useNavigate()
     const showProject = (project) => {
         navigate(`/Project/${project.name}`)
@@ -72,12 +28,13 @@ const ProjectList = (props) => {
     } else {
         return (
             <div className='project-list'>
+                <h2>Projects</h2>
                 {
                     projects.data.map((project)=> (
-                        <div key={project.name} onClick={()=>showProject(project)}>
-                            <h3>{project.name}</h3>
-                            <div className='project-info'>
-                                <ul>
+                        <div key={project.name} className='project-info' onClick={()=>showProject(project)}>
+                            <div className='projectBox'>
+                                <h3>{project.name}</h3>
+                                <ul className='projectUL'>
                                     <li>Description: {project.description}</li>
                                     <li>Project Leader: {project.teamLeader}</li>
                                     <li>Project Due Date: {project.dateDue}</li>
