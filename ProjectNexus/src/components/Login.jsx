@@ -8,7 +8,7 @@ export default function Login () {
     const BASE_URL = "https://projectwrx-back-production.up.railway.app/api/"
 
     const initialState = { 
-        userName: '',
+        username: '',
         password: '',
     }
 
